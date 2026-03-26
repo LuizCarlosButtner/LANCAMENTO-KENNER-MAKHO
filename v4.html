@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenner Makho - Lançamento</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat (Idêntica à da sua imagem) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-orange': '#e85d22', /* Laranja exato da imagem */
+                        'brand-dark': '#000000',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Ajustes para a animação do Scroll (Vídeo) */
+        .feature-box {
+            will-change: transform, opacity;
+        }
+        
+        #animated-sandal {
+            will-change: transform;
+            /* Se for usar uma imagem PNG com fundo transparente do produto, remova a borda/sombra no HTML e use um drop-shadow aqui: */
+            filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.3));
+        }
+
+        /* Modal transitions */
+        #mediaModal {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-white text-brand-dark font-sans antialiased overflow-x-hidden">
+
+    <!-- SEÇÃO 1: Hero (Baseada na sua imagem) -->
+    <section class="min-h-screen flex items-center bg-white relative pt-20 pb-10">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 px-8 xl:px-0 items-center">
+            
+            <!-- Coluna de Texto (Esquerda) -->
+            <div class="space-y-6 max-w-lg z-10">
+                <h1 class="text-6xl md:text-[80px] font-black uppercase tracking-tight text-black leading-none">
+                    Kenner<br>Makho
+                </h1>
+                
+                <div class="space-y-4 mt-6">
+                    <p class="text-[1.15rem] text-gray-800 font-medium leading-relaxed">
+                        Conheça a primeira sandália ergonômica da Kenner: Makho.<br>
+                        Conforto e robustez na medida certa!
+                    </p>
+                    <p class="text-[1.15rem] text-gray-700 leading-relaxed">
+                        Aprenda os diferenciais desse novo modelo, alavanque suas vendas e concorra a
+                    </p>
+                </div>
+                
+                <!-- Ícone + Texto Laranja -->
+                <div class="flex items-center space-x-3 text-brand-orange mt-8 mb-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                        <path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-2xl font-black uppercase tracking-wider">Brindes Exclusivos</span>
+                </div>
+
+                <!-- Botão -->
+                <button 
+                    onclick="openModal()" 
+                    class="bg-black text-white px-10 py-5 font-bold uppercase tracking-wider text-lg rounded hover:bg-brand-orange transition-colors duration-300 shadow-xl">
+                    Vem Assistir!
+                </button>
+            </div>
+            
+            <!-- Coluna da Imagem (Direita) -->
+            <div class="relative z-10 flex justify-center lg:justify-end">
+                <!-- 
+                    ATENÇÃO: Substitua o 'src' abaixo pela sua imagem .PNG transparente da Kenner! 
+                    Atualmente usando uma imagem aleatória como marcação.
+                -->
+                <img 
+                    src="https://images.unsplash.com/photo-1603487742131-4160ec999306?q=80&w=800&auto=format&fit=crop" 
+                    alt="Kenner Makho" 
+                    class="w-full max-w-lg object-contain rounded-3xl animate-float"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 2: Scroll Animation Parallax (Baseada no vídeo de exemplo) -->
+    <!-- Essa seção tem altura de 400vh (4 vezes a tela) para permitir rolagem enquanto a imagem fica fixa -->
+    <section id="features-scroll" class="relative bg-gray-50 h-[400vh]">
+        
+        <!-- Elemento Fixo (Imagem no centro) -->
+        <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+            <!-- 
+                ATENÇÃO: Coloque aqui também a SUA imagem PNG transparente. 
+                O Javascript vai animar essa imagem conforme o scroll (zoom e rotação).
+            -->
+            <img 
+                id="animated-sandal" 
+                src="https://images.unsplash.com/photo-1603487742131-4160ec999306?q=80&w=800&auto=format&fit=crop" 
+                class="w-72 md:w-96 rounded-3xl transition-transform duration-75 ease-out"
+                alt="Detalhe Kenner"
+            >
+        </div>
+
+        <!-- Conteúdo que rola por cima da imagem fixa -->
+        <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+            
+            <!-- Diferencial 1 -->
+            <div class="h-screen flex items-center justify-start px-6 lg:px-32">
+                <div class="feature-box bg-white/95 backdrop-blur p-8 shadow-2xl max-w-sm rounded-xl border-l-8 border-brand-orange pointer-events-auto transform transition-all duration-700 translate-y-24 opacity-0">
+                    <h3 class="text-3xl font-black mb-3 uppercase text-black">Arquitetura Robusta</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Linhas marcantes e um design pensado para impactar. A estrutura externa protege e garante a durabilidade extrema da Makho.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Diferencial 2 -->
+            <div class="h-screen flex items-center justify-end px-6 lg:px-32">
+                <div class="feature-box bg-black/95 backdrop-blur p-8 shadow-2xl max-w-sm rounded-xl border-r-8 border-brand-orange pointer-events-auto transform transition-all duration-700 translate-y-24 opacity-0">
+                    <h3 class="text-3xl font-black mb-3 uppercase text-white">Ergonomia Absoluta</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        O formato interno abraça o seu pé. Palmilha desenhada milimetricamente para absorção de impacto e descanso prolongado.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Diferencial 3 -->
+            <div class="h-screen flex items-center justify-start px-6 lg:px-32">
+                <div class="feature-box bg-white/95 backdrop-blur p-8 shadow-2xl max-w-sm rounded-xl border-l-8 border-brand-orange pointer-events-auto transform transition-all duration-700 translate-y-24 opacity-0">
+                    <h3 class="text-3xl font-black mb-3 uppercase text-black">Solado Tratorado</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Aderência total em qualquer superfície. O solado esportivo traz a tecnologia off-road para o seu dia a dia urbano.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Espaço final para o scroll sair suavemente -->
+            <div class="h-screen flex items-center justify-center"></div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-brand-dark text-gray-400 py-12 text-center text-sm">
+        <p>&copy; 2026 Kenner. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- MODAL VEM ASSISTIR (Mantido como você pediu antes) -->
+    <div id="mediaModal" class="fixed inset-0 z-50 hidden opacity-0 flex items-center justify-center">
+        <!-- Fundo escuro do modal -->
+        <div class="absolute inset-0 bg-black bg-opacity-90 backdrop-blur-md" onclick="closeModal()"></div>
+        
+        <!-- Conteúdo do Modal -->
+        <div class="relative z-10 w-full max-w-4xl mx-auto p-4 flex flex-col items-center">
+            
+            <button onclick="closeModal()" class="absolute -top-12 right-4 md:-right-4 text-white hover:text-brand-orange text-5xl transition-colors font-light">
+                &times;
+            </button>
+            
+            <div class="bg-black p-1 rounded-xl shadow-[0_0_40px_rgba(232,93,34,0.3)] w-full flex items-center justify-center overflow-hidden">
+                <!-- Imagem do caminho local solicitado -->
+                <img 
+                    src="/Users/agrestudio/Documents/teste01/5234371b-f6f9-4579-9083-13f58958ac20.jpeg" 
+                    alt="Imagem local da Sandália" 
+                    class="max-w-full max-h-[80vh] object-contain rounded-lg"
+                    onerror="this.onerror=null; this.outerHTML='<div class=\'text-center p-10 py-20 bg-gray-900 w-full rounded-lg\'><p class=\'text-brand-orange font-bold text-xl mb-2\'>Vídeo / Imagem Indisponível no Preview</p><p class=\'text-sm text-gray-400\'>Caminho local: /Users/agrestudio/.../5234371b-f6f9-4579-9083-13f58958ac20.jpeg</p><p class=\'text-sm text-gray-500 mt-4\'>No seu computador, se o arquivo existir, ele aparecerá aqui perfeitamente!</p></div>'"
+                >
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS MÁGICOS -->
+    <script>
+        // 1. Lógica do Modal
+        const modal = document.getElementById('mediaModal');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // 2. Lógica para revelar os textos (Fade In/Up)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Quando o texto entra na tela, sobe e aparece
+                    entry.target.classList.remove('opacity-0', 'translate-y-24');
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                } else {
+                    // Quando sai da tela, volta ao estado original para animar de novo
+                    entry.target.classList.add('opacity-0', 'translate-y-24');
+                    entry.target.classList.remove('opacity-100', 'translate-y-0');
+                }
+            });
+        }, { 
+            threshold: 0.4 // Dispara quando 40% do card estiver visível
+        });
+
+        document.querySelectorAll('.feature-box').forEach(box => {
+            observer.observe(box);
+        });
+
+        // 3. Lógica do Parallax (Animar a sandália conforme rola a página)
+        const scrollSection = document.getElementById('features-scroll');
+        const animatedSandal = document.getElementById('animated-sandal');
+
+        window.addEventListener('scroll', () => {
+            const rect = scrollSection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            
+            // Verifica se a seção de scroll está visível na tela
+            if (rect.top <= viewportHeight && rect.bottom >= 0) {
+                
+                // Calcula o progresso do scroll da seção (de 0.0 a 1.0)
+                const totalScrollableDistance = rect.height - viewportHeight;
+                let progress = Math.abs(rect.top) / totalScrollableDistance;
+                progress = Math.max(0, Math.min(1, progress)); // Garante que fique entre 0 e 1
+
+                // Regras da Animação Baseada no Scroll (Zoom in, Rotate)
+                // O zoom vai de 1x (normal) até 1.8x
+                const scale = 1 + (progress * 0.8); 
+                
+                // Rotaciona de um lado para o outro como se estivesse analisando o produto
+                const rotate = Math.sin(progress * Math.PI * 1.5) * 15; 
+                
+                // Aplica a transformação via CSS inline
+                animatedSandal.style.transform = `scale(${scale}) rotate(${rotate}deg)`;
+            }
+        });
+    </script>
+</body>
+</html>

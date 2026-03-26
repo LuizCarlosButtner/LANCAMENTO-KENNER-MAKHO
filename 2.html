@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Kenner Makho - Lançamento</title>
+   <!-- Tailwind CSS -->
+   <script src="https://cdn.tailwindcss.com"></script>
+   <!-- Configuração da Paleta de Cores -->
+   <script>
+       tailwind.config = {
+           theme: {
+               extend: {
+                   colors: {
+                       preto: '#000000',
+                       branco: '#FFFFFF',
+                       laranja: '#FF5A00',
+                       cinzaTexto: '#333333',
+                       cinzaFundo: '#F2F2F2',
+                   },
+                   fontFamily: {
+                       sans: ['Montserrat', 'sans-serif'],
+                   }
+               }
+           }
+       }
+   </script>
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
+   <!-- Font Awesome para Ícones -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <style>
+       /* Estilos adicionais para garantir que a fonte seja aplicada */
+       body { font-family: 'Montserrat', sans-serif; }
+       .logo-font { font-style: italic; font-weight: 800; letter-spacing: -1px; }
+   </style>
+</head>
+<body class="bg-branco text-cinzaTexto flex flex-col min-h-screen">
+
+
+   <!-- Seção 1: Barra do Logo -->
+   <header class="w-full py-6 bg-preto flex justify-center items-center">
+       <img src="KENNER - LOGO 1 - LARANJA.png" alt="Logo Kenner" class="h-10 md:h-12 w-auto">
+   </header>
+
+
+   <!-- Seção 2: Barra do Contador (Agora Fixa no Topo e Otimizada para Mobile) -->
+   <div class="w-full bg-laranja text-branco py-2 md:py-4 px-2 flex flex-row justify-center items-center gap-2 md:gap-4 shadow-lg sticky top-0 z-50 transition-all duration-300">
+       <span class="text-sm md:text-2xl font-light hidden sm:inline">faltam</span>
+      
+       <div class="flex items-center gap-1 md:gap-4 text-center">
+           <!-- Dias -->
+           <div class="flex flex-col items-center">
+               <div class="bg-preto text-branco text-xl md:text-4xl font-bold py-1 px-2 md:py-2 md:px-3 rounded-md shadow-inner min-w-[40px] md:min-w-[60px]" id="days">36</div>
+               <span class="text-[10px] md:text-xs mt-1 font-semibold uppercase tracking-wider">dias</span>
+           </div>
+           <span class="text-xl md:text-4xl font-bold pb-3 md:pb-4">:</span>
+           <!-- Horas -->
+           <div class="flex flex-col items-center">
+               <div class="text-xl md:text-4xl font-bold py-1 px-1 min-w-[35px] md:min-w-[50px]" id="hours">16</div>
+               <span class="text-[10px] md:text-xs mt-1 font-semibold uppercase tracking-wider">horas</span>
+           </div>
+           <span class="text-xl md:text-4xl font-bold pb-3 md:pb-4">:</span>
+           <!-- Minutos -->
+           <div class="flex flex-col items-center">
+               <div class="text-xl md:text-4xl font-bold py-1 px-1 min-w-[35px] md:min-w-[50px]" id="minutes">12</div>
+               <span class="text-[10px] md:text-xs mt-1 font-semibold uppercase tracking-wider">minutos</span>
+           </div>
+           <span class="text-xl md:text-4xl font-bold pb-3 md:pb-4">:</span>
+           <!-- Segundos -->
+           <div class="flex flex-col items-center">
+               <div class="text-xl md:text-4xl font-bold py-1 px-1 min-w-[35px] md:min-w-[50px]" id="seconds">41</div>
+               <span class="text-[10px] md:text-xs mt-1 font-semibold uppercase tracking-wider">segs</span>
+           </div>
+       </div>
+   </div>
+
+
+   <!-- Seção 3: Hero (Apresentação e Produto) -->
+   <main class="w-full max-w-7xl mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
+       <!-- Texto da Esquerda -->
+       <div class="w-full md:w-1/2 flex flex-col items-start gap-6">
+           <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-preto uppercase uppercase tracking-tight">Kenner Makho</h2>
+          
+           <p class="text-lg text-cinzaTexto leading-relaxed">
+               Conheça a primeira sandália ergonômica da Kenner: Makho. Conforto e robustez na medida certa!
+           </p>
+          
+           <p class="text-lg text-cinzaTexto leading-relaxed">
+               Aprenda os diferenciais desse novo modelo, alavanque suas vendas e concorra a
+           </p>
+          
+           <div class="flex items-center gap-3 text-laranja font-bold text-xl md:text-2xl uppercase mt-2">
+               <i class="fa-solid fa-fire text-2xl"></i>
+               <span>Brindes Exclusivos</span>
+           </div>
+          
+           <button id="openModalBtn" class="mt-6 bg-preto text-branco hover:bg-laranja transition-colors duration-300 font-bold text-lg py-4 px-10 rounded-md uppercase tracking-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+               Vem Assistir!
+           </button>
+       </div>
+      
+       <!-- Imagem da Direita -->
+       <div class="w-full md:w-1/2 flex justify-center relative">
+           <!-- Efeito de brilho sutil atrás da imagem -->
+           <div class="absolute inset-0 bg-gradient-to-r from-transparent via-gray-100 to-transparent rounded-full filter blur-3xl opacity-50"></div>
+           <!-- Imagem Placeholder do Chinelo -->
+           <img src="Adobe Express - file.png" alt="" class="relative z-10 w-full max-w-md drop-shadow-2xl rounded-2xl object-cover transform -rotate-12 hover:rotate-0 transition-transform duration-700">
+       </div>
+   </main>
+
+
+   <!-- Seção 4: Programação (Cards) -->
+   <section class="w-full bg-branco py-16 px-6 border-t border-gray-200">
+       <div class="max-w-7xl mx-auto">
+           <!-- Título da Seção -->
+           <div class="flex items-center justify-center gap-4 mb-12">
+               <div class="h-0.5 bg-preto w-16 md:w-32 hidden md:block"></div>
+               <h3 class="text-2xl md:text-3xl font-extrabold text-preto text-center uppercase tracking-wide">
+                   Live de Lançamento <span class="text-laranja">-</span> Makho <br class="md:hidden">Programação
+               </h3>
+               <div class="h-0.5 bg-preto w-16 md:w-32 hidden md:block"></div>
+           </div>
+
+
+           <!-- Grid de Cards -->
+           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+              
+               <!-- Card 1 -->
+               <div class="bg-cinzaFundo border border-gray-200 rounded-xl p-6 flex flex-col h-full hover:shadow-lg transition-shadow">
+                   <h4 class="text-preto font-bold text-lg uppercase mb-3 leading-tight">Mercado de<br>Slides<br>no Brasil</h4>
+                   <div class="w-full h-px bg-gray-300 mb-4"></div>
+                   <p class="text-cinzaTexto text-sm flex-grow">Entenda tendências, comportamento e posicionamento da categoria.</p>
+                   <div class="mt-6 font-extrabold text-preto logo-font text-xl tracking-widest">KENNER</div>
+               </div>
+
+
+               <!-- Card 2 -->
+               <div class="bg-cinzaFundo border border-gray-200 rounded-xl p-6 flex flex-col h-full hover:shadow-lg transition-shadow">
+                   <h4 class="text-preto font-bold text-lg uppercase mb-3 leading-tight text-laranja">Makho:<br><span class="text-preto">A slide mais<br>confortável<br>da Kenner</span></h4>
+                   <div class="w-full h-px bg-gray-300 mb-4"></div>
+                   <p class="text-cinzaTexto text-sm flex-grow">Descubra os diferenciais, tecnologia e conceito do produto.</p>
+                   <div class="mt-6 font-extrabold text-preto logo-font text-xl tracking-widest">KENNER</div>
+               </div>
+
+
+               <!-- Card 3 -->
+               <div class="bg-cinzaFundo border border-gray-200 rounded-xl p-6 flex flex-col h-full hover:shadow-lg transition-shadow">
+                   <h4 class="text-preto font-bold text-lg uppercase mb-3 leading-tight">Orientações<br>de Exposição</h4>
+                   <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+                   <p class="text-cinzaTexto text-sm flex-grow">Como destacar o produto no PDV e vender mais.</p>
+                   <div class="mt-6 font-extrabold text-preto logo-font text-xl tracking-widest">KENNER</div>
+               </div>
+
+
+               <!-- Card 4 -->
+               <div class="bg-cinzaFundo border border-gray-200 rounded-xl p-6 flex flex-col h-full hover:shadow-lg transition-shadow">
+                   <h4 class="text-preto font-bold text-lg uppercase mb-3 leading-tight">O que vem<br>por aí (Digital)</h4>
+                   <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+                   <p class="text-cinzaTexto text-sm flex-grow">Campanhas, redes sociais e como a marca vai impulsionar o produto.</p>
+                   <div class="mt-6 font-extrabold text-preto logo-font text-xl tracking-widest">KENNER</div>
+               </div>
+
+
+               <!-- Card 5 (Destaque) -->
+               <div class="bg-laranja rounded-xl p-6 flex flex-col h-full shadow-lg transform md:-translate-y-2 hover:-translate-y-4 transition-transform duration-300 text-branco">
+                   <h4 class="font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Momento<br>de Interação</h4>
+                   <div class="w-full h-px bg-branco/30 mb-4 mt-4"></div>
+                   <p class="text-branco/90 text-sm flex-grow text-center">Perguntas, troca com o time e brindes especiais ao vivo.</p>
+                   <div class="mt-6 font-extrabold text-preto logo-font text-2xl tracking-widest text-center">KENNER</div>
+               </div>
+
+
+           </div>
+       </div>
+   </section>
+
+
+   <!-- Seção 5: Rodapé de Alerta -->
+   <footer class="w-full bg-branco py-8 flex justify-center items-center border-t border-gray-200 mt-auto">
+       <div class="flex items-center gap-4 text-preto font-extrabold text-xl md:text-2xl uppercase tracking-wide">
+           <div class="bg-laranja text-branco rounded-full w-8 h-8 flex items-center justify-center text-sm shadow-md">
+               <i class="fa-solid fa-exclamation"></i>
+           </div>
+           <span>09h00 E 14h00</span>
+           <span class="text-gray-300 mx-2">|</span>
+           <span>Ao Vivo</span>
+       </div>
+   </footer>
+
+
+   <!-- Modal de Imagem -->
+   <div id="imageModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-preto/80 backdrop-blur-sm p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+       <div class="relative max-w-4xl w-full flex justify-center">
+           <!-- Botão Fechar -->
+           <button id="closeModalBtn" class="absolute -top-10 right-0 md:-right-8 text-branco hover:text-laranja transition-colors text-4xl font-bold">&times;</button>
+           <!-- Imagem -->
+           <img src="5234371b-f6f9-4579-9083-13f58958ac20.jpeg" alt="Live de Lançamento Kenner" class="w-full h-auto rounded-xl shadow-2xl">
+       </div>
+   </div>
+
+   <!-- Script do Contador -->
+   <script>
+       // Configurando a data alvo para 36 dias a partir de hoje (como na imagem)
+       const targetDate = new Date();
+       targetDate.setDate(targetDate.getDate() + 36);
+       targetDate.setHours(targetDate.getHours() + 16);
+       targetDate.setMinutes(targetDate.getMinutes() + 12);
+
+
+       function updateCountdown() {
+           const now = new Date();
+           const difference = targetDate - now;
+
+
+           if (difference <= 0) {
+               document.getElementById('days').innerText = '00';
+               document.getElementById('hours').innerText = '00';
+               document.getElementById('minutes').innerText = '00';
+               document.getElementById('seconds').innerText = '00';
+               return;
+           }
+
+
+           const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+           const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+           const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+           const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+
+           // Adiciona um zero na frente se for menor que 10
+           document.getElementById('days').innerText = days.toString().padStart(2, '0');
+           document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+           document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+           document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+       }
+
+
+       // Atualiza a cada 1 segundo
+       setInterval(updateCountdown, 1000);
+       updateCountdown(); // Chamada inicial
+
+       // --- Lógica do Modal ---
+       const modal = document.getElementById('imageModal');
+       const openBtn = document.getElementById('openModalBtn');
+       const closeBtn = document.getElementById('closeModalBtn');
+
+       function toggleModal() {
+           // Altera a opacidade e desativa/ativa eventos de clique
+           modal.classList.toggle('opacity-0');
+           modal.classList.toggle('pointer-events-none');
+       }
+
+       openBtn.addEventListener('click', toggleModal);
+       closeBtn.addEventListener('click', toggleModal);
+       // Fechar ao clicar fora da imagem (no fundo escuro)
+       modal.addEventListener('click', (e) => { if (e.target === modal) toggleModal(); });
+   </script>
+</body>
+</html>
