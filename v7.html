@@ -116,6 +116,7 @@
             >
         </div>
     </div>
+    
 
     <!-- CONTEÚDO SCROLLÁVEL -->
     <div class="relative z-10 w-full bg-transparent">
@@ -126,7 +127,7 @@
                 
                 <!-- Coluna de Texto (Esquerda) -->
                 <!-- Mobile First: Fundo com blur, centralizado. Desktop: sem fundo, alinhado à esquerda -->
-                <div class="space-y-4 md:space-y-4 max-w-lg z-20 bg-white/85 md:bg-transparent backdrop-blur-md md:backdrop-blur-none p-6 md:p-0 rounded-3xl md:rounded-none text-center md:text-left mx-auto md:mx-0 shadow-2xl md:shadow-none">
+                <div class="space-y-4 md:space-y-4 max-w-lg z-20 md:bg-transparent md:backdrop-blur-none md:p-0 md:rounded-none text-center md:text-left mx-auto md:mx-0 md:shadow-none">
                     <h1 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-black leading-none">
                         Kenner<br>Makho
                     </h1>
@@ -171,6 +172,64 @@
             </div>
         </section>
 
+
+<!-- Seção 4: Programação (Cards) - Agora com fundo claro para contrastar -->
+<section class="w-full py-24 px-6 relative z-20">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex items-center justify-center gap-4 mb-16">
+            <div class="h-0.5 bg-black w-16 md:w-32 hidden md:block"></div>
+            <h3 class="text-3xl md:text-4xl font-extrabold text-black text-center uppercase tracking-wide">
+                Live de Lançamento <span class="text-orange-500">-</span> Makho <br class="md:hidden">Programação
+            </h3>
+            <div class="h-0.5 bg-black w-16 md:w-32 hidden md:block"></div>
+        </div>
+
+        <!-- ABERTURA DO GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            
+            <!-- Card 1 -->
+            <div class="bg-gray-50 rounded-xl p-6 flex flex-col h-full transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
+                <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight">Mercado de<br>Slides<br>no Brasil</h4>
+                <div class="w-full h-px bg-gray-300 mb-4"></div>
+                <p class="text-gray-600 text-sm flex-grow">Entenda tendências, comportamento e posicionamento da categoria.</p>
+                <div class="mt-6 font-extrabold text-black logo-font text-xl tracking-widest">KENNER</div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-gray-50 rounded-xl p-6 flex flex-col h-full transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
+                <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight text-orange-500">Makho:<br><span class="text-black">A slide mais<br>confortável<br>da Kenner</span></h4>
+                <div class="w-full h-px bg-gray-300 mb-4"></div>
+                <p class="text-gray-600 text-sm flex-grow">Descubra os diferenciais, tecnologia e conceito do produto.</p>
+                <div class="mt-6 font-extrabold text-black logo-font text-xl tracking-widest">KENNER</div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-gray-50 rounded-xl p-6 flex flex-col h-full transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
+                <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight">Orientações<br>de Exposição</h4>
+                <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+                <p class="text-gray-600 text-sm flex-grow">Como destacar o produto no PDV e vender mais.</p>
+                <div class="mt-6 font-extrabold text-black logo-font text-xl tracking-widest">KENNER</div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-gray-50 rounded-xl p-6 flex flex-col h-full transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
+                <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight">O que vem<br>por aí (Digital)</h4>
+                <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+                <p class="text-gray-600 text-sm flex-grow">Campanhas, redes sociais e como a marca vai impulsionar o produto.</p>
+                <div class="mt-6 font-extrabold text-black logo-font text-xl tracking-widest">KENNER</div>
+            </div>
+
+            <!-- Card 5 (Destaque) -->
+            <div class="bg-orange-500 rounded-xl p-6 flex flex-col h-full transform md:-translate-y-2 transition-transform duration-300 text-white shadow-[0_0_25px_10px_rgba(249,115,22,0.4)] border border-orange-400">
+                <h4 class="font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Momento<br>de Interação</h4>
+                <div class="w-full h-px bg-white/30 mb-4 mt-4"></div>
+                <p class="text-white/90 text-sm flex-grow text-center">Perguntas, troca com o time e brindes especiais ao vivo.</p>
+                <div class="mt-6 font-extrabold text-black logo-font text-2xl tracking-widest text-center">KENNER</div>
+            </div>
+
+        </div> <!-- FECHAMENTO DO GRID (Agora no lugar certo!) -->
+    </div>
+</section>
         <!-- SEÇÃO 2: Scroll Animation Parallax -->
         <section id="features-scroll" class="relative w-full z-10">
             
@@ -208,118 +267,7 @@
             <div class="h-[10vh] md:h-[20vh]"></div>
         </section>
 
-        <!-- SEÇÃO 3: Anatomia do Conforto (Imagem Estática + Balões Animados) -->
-        <section id="anatomia-section" class="relative w-full z-20 bg-black py-16 md:py-24 border-t border-zinc-900 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
-            <div class="max-w-[90rem] mx-auto px-2 sm:px-4 md:px-8">
-                
-                <div class="text-center mb-10 md:mb-16 px-4">
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight">Anatomia do Conforto</h2>
-                    <p class="text-gray-400 mt-2 md:mt-4 text-xs md:text-sm lg:text-lg">Toque ou passe o mouse nos detalhes para explorar</p>
-                </div>
 
-                <!-- Container do Infográfico -->
-                <!-- Mobile First: aspect-[3/4] para dar altura. Desktop: aspect-video (widescreen) -->
-                <div class="relative w-full aspect-[3/4] sm:aspect-[4/5] md:aspect-video flex items-center justify-center bg-black overflow-hidden rounded-2xl md:rounded-none">
-
-                    <!-- Produto Central -->
-                    <img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?q=80&w=800&auto=format&fit=crop" alt="Sandália Makho Detalhes" class="relative z-10 w-[95%] sm:w-[85%] md:w-[60%] object-contain drop-shadow-[0_40px_30px_rgba(0,0,0,0.9)] pointer-events-none">
-
-                    <!-- ================= BALÕES INTERATIVOS (Distribuição Mobile First) ================= -->
-
-                    <!-- 1. Assinatura Kenner (Mobile: Topo Esquerda | Desktop: Cima Esquerda) -->
-                    <div tabindex="0" class="infographic-balloon absolute top-[4%] left-[2%] md:top-[10%] md:left-[5%] lg:top-[20%] lg:left-[8%] z-30 group cursor-pointer transition-all duration-500 ease-out hover:scale-[1.05] focus:scale-[1.05] hover:z-50 focus:z-50 focus:outline-none">
-                        <div class="bg-[#0a0a0a] rounded-xl backdrop-blur-md border border-zinc-800 p-2 sm:p-3 md:p-4 lg:p-5 w-28 sm:w-36 md:w-52 lg:w-64 shadow-xl transition-all duration-300 group-hover:border-brand-orange group-focus:border-brand-orange group-hover:bg-black group-focus:bg-black group-hover:shadow-[0_0_30px_rgba(232,93,34,0.3)] group-focus:shadow-[0_0_30px_rgba(232,93,34,0.3)]">
-                            <h4 class="text-white font-bold text-[9px] sm:text-[10px] md:text-xs lg:text-sm mb-1 uppercase tracking-wider">Assinatura Kenner</h4>
-                            <p class="text-gray-300 text-[8px] sm:text-[9px] md:text-[11px] lg:text-xs leading-relaxed">Marca em relevo no solado.</p>
-                            
-                            <!-- Texto Expandido -->
-                            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr] transition-all duration-500 ease-in-out">
-                                <div class="overflow-hidden">
-                                    <p class="pt-2 mt-2 border-t border-zinc-800 text-brand-orange font-medium text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] leading-relaxed opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500 delay-75">
-                                        Detalhe de autenticidade vulcanizado para não desgastar com o tempo.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hidden md:block absolute top-1/2 -right-10 lg:-right-16 w-10 lg:w-16 h-[1px] bg-zinc-600 group-hover:bg-brand-orange group-focus:bg-brand-orange transition-colors"></div>
-                        <div class="hidden md:block absolute top-1/2 -right-10 lg:-right-16 w-2 h-2 bg-zinc-300 rounded-full transform -translate-y-1/2 info-dot group-hover:bg-brand-orange group-focus:bg-brand-orange group-hover:shadow-[0_0_15px_#e85d22] transition-colors animate-pulse"></div>
-                    </div>
-
-                    <!-- 2. Endurance Pro (Mobile: Topo Direita | Desktop: Cima Direita) -->
-                    <div tabindex="0" class="infographic-balloon absolute top-[4%] right-[2%] md:top-[10%] md:right-[5%] lg:top-[20%] lg:right-[8%] z-30 group cursor-pointer transition-all duration-500 ease-out hover:scale-[1.05] focus:scale-[1.05] hover:z-50 focus:z-50 focus:outline-none">
-                        <div class="bg-[#0a0a0a] rounded-xl backdrop-blur-md border border-zinc-800 p-2 sm:p-3 md:p-4 lg:p-5 w-28 sm:w-36 md:w-52 lg:w-64 shadow-xl transition-all duration-300 group-hover:border-brand-orange group-focus:border-brand-orange group-hover:bg-black group-focus:bg-black group-hover:shadow-[0_0_30px_rgba(232,93,34,0.3)] group-focus:shadow-[0_0_30px_rgba(232,93,34,0.3)] text-right md:text-left">
-                            <h4 class="text-white font-bold text-[9px] sm:text-[10px] md:text-xs lg:text-sm mb-1 uppercase tracking-wider">Endurance Pro</h4>
-                            <p class="text-gray-300 text-[8px] sm:text-[9px] md:text-[11px] lg:text-xs leading-relaxed">Palmilha anti-derrapante.</p>
-                            
-                            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr] transition-all duration-500 ease-in-out">
-                                <div class="overflow-hidden">
-                                    <p class="pt-2 mt-2 border-t border-zinc-800 text-brand-orange font-medium text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] leading-relaxed opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500 delay-75">
-                                        Polímero de alta densidade que não afunda nem perde o formato.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hidden md:block absolute top-1/2 -left-10 lg:-left-16 w-10 lg:w-16 h-[1px] bg-zinc-600 group-hover:bg-brand-orange group-focus:bg-brand-orange transition-colors"></div>
-                        <div class="hidden md:block absolute top-1/2 -left-10 lg:-left-16 w-2 h-2 bg-zinc-300 rounded-full transform -translate-y-1/2 info-dot group-hover:bg-brand-orange group-focus:bg-brand-orange group-hover:shadow-[0_0_15px_#e85d22] transition-colors animate-pulse"></div>
-                    </div>
-
-                    <!-- 3. Solado Tratorado (Mobile: Meio Esquerda | Desktop: Baixo Esquerda) -->
-                    <div tabindex="0" class="infographic-balloon absolute top-[45%] -translate-y-1/2 left-[2%] md:top-auto md:translate-y-0 md:bottom-[10%] md:left-[5%] lg:bottom-[15%] lg:left-[8%] z-30 group cursor-pointer transition-all duration-500 ease-out hover:scale-[1.05] focus:scale-[1.05] hover:z-50 focus:z-50 focus:outline-none">
-                        <div class="bg-[#0a0a0a] rounded-xl backdrop-blur-md border border-zinc-800 p-2 sm:p-3 md:p-4 lg:p-5 w-28 sm:w-36 md:w-52 lg:w-64 shadow-xl transition-all duration-300 group-hover:border-brand-orange group-focus:border-brand-orange group-hover:bg-black group-focus:bg-black group-hover:shadow-[0_0_30px_rgba(232,93,34,0.3)] group-focus:shadow-[0_0_30px_rgba(232,93,34,0.3)]">
-                            <h4 class="text-white font-bold text-[9px] sm:text-[10px] md:text-xs lg:text-sm mb-1 uppercase tracking-wider">Solado Tratorado</h4>
-                            <p class="text-gray-300 text-[8px] sm:text-[9px] md:text-[11px] lg:text-xs leading-relaxed">Design agressivo para tração.</p>
-                            
-                            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr] transition-all duration-500 ease-in-out">
-                                <div class="overflow-hidden">
-                                    <p class="pt-2 mt-2 border-t border-zinc-800 text-brand-orange font-medium text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] leading-relaxed opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500 delay-75">
-                                        Vincos profundos escoam a água e garantem estabilidade máxima.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hidden md:block absolute top-1/2 -right-10 lg:-right-16 w-10 lg:w-16 h-[1px] bg-zinc-600 group-hover:bg-brand-orange group-focus:bg-brand-orange transition-colors"></div>
-                        <div class="hidden md:block absolute top-1/2 -right-10 lg:-right-16 w-2 h-2 bg-zinc-300 rounded-full transform -translate-y-1/2 info-dot group-hover:bg-brand-orange group-focus:bg-brand-orange group-hover:shadow-[0_0_15px_#e85d22] transition-colors animate-pulse"></div>
-                    </div>
-
-                    <!-- 4. Feito no Brasil (Mobile: Meio Direita | Desktop: Baixo Direita) -->
-                    <div tabindex="0" class="infographic-balloon absolute top-[45%] -translate-y-1/2 right-[2%] md:top-auto md:translate-y-0 md:bottom-[10%] md:right-[5%] lg:bottom-[15%] lg:right-[8%] z-30 group cursor-pointer transition-all duration-500 ease-out hover:scale-[1.05] focus:scale-[1.05] hover:z-50 focus:z-50 focus:outline-none">
-                        <div class="bg-[#0a0a0a] rounded-xl backdrop-blur-md border border-zinc-800 p-2 sm:p-3 md:p-4 lg:p-5 w-28 sm:w-36 md:w-52 lg:w-64 shadow-xl transition-all duration-300 group-hover:border-brand-orange group-focus:border-brand-orange group-hover:bg-black group-focus:bg-black group-hover:shadow-[0_0_30px_rgba(232,93,34,0.3)] group-focus:shadow-[0_0_30px_rgba(232,93,34,0.3)] text-right md:text-left">
-                            <h4 class="text-white font-bold text-[9px] sm:text-[10px] md:text-xs lg:text-sm mb-1 uppercase tracking-wider">Feito no Brasil</h4>
-                            <p class="text-gray-300 text-[8px] sm:text-[9px] md:text-[11px] lg:text-xs leading-relaxed">Qualidade nacional garantida.</p>
-                            
-                            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr] transition-all duration-500 ease-in-out">
-                                <div class="overflow-hidden">
-                                    <p class="pt-2 mt-2 border-t border-zinc-800 text-brand-orange font-medium text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] leading-relaxed opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500 delay-75">
-                                        Produzida no Brasil, mantendo rigorosos testes de durabilidade.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hidden md:block absolute top-1/2 -left-10 lg:-left-16 w-10 lg:w-16 h-[1px] bg-zinc-600 group-hover:bg-brand-orange group-focus:bg-brand-orange transition-colors"></div>
-                        <div class="hidden md:block absolute top-1/2 -left-10 lg:-left-16 w-2 h-2 bg-zinc-300 rounded-full transform -translate-y-1/2 info-dot group-hover:bg-brand-orange group-focus:bg-brand-orange group-hover:shadow-[0_0_15px_#e85d22] transition-colors animate-pulse"></div>
-                    </div>
-
-                    <!-- 5. Logotipo Geométrico (Mobile: Baixo Centro | Desktop: Cima Centro) -->
-                    <div tabindex="0" class="infographic-balloon absolute bottom-[4%] left-1/2 -translate-x-1/2 md:bottom-auto md:top-[5%] lg:top-[8%] z-30 group cursor-pointer transition-all duration-500 ease-out hover:scale-[1.05] focus:scale-[1.05] hover:z-50 focus:z-50 focus:outline-none">
-                        <div class="bg-[#0a0a0a] rounded-xl backdrop-blur-md border border-zinc-800 p-2 sm:p-3 md:p-4 lg:p-5 w-40 sm:w-48 md:w-56 lg:w-64 shadow-xl transition-all duration-300 group-hover:border-brand-orange group-focus:border-brand-orange group-hover:bg-black group-focus:bg-black group-hover:shadow-[0_0_30px_rgba(232,93,34,0.3)] group-focus:shadow-[0_0_30px_rgba(232,93,34,0.3)] text-center">
-                            <h4 class="text-white font-bold text-[9px] sm:text-[10px] md:text-xs lg:text-sm mb-1 uppercase tracking-wider">Logotipo 'K' Geométrico</h4>
-                            <p class="text-gray-300 text-[8px] sm:text-[9px] md:text-[11px] lg:text-xs leading-relaxed">Identidade icônica e exclusiva.</p>
-                            
-                            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr] transition-all duration-500 ease-in-out">
-                                <div class="overflow-hidden">
-                                    <p class="pt-2 mt-2 border-t border-zinc-800 text-brand-orange font-medium text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] leading-relaxed opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500 delay-75">
-                                        Estética minimalista reforçando a atitude urbana e imponente.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hidden md:block absolute -bottom-6 lg:-bottom-10 left-1/2 w-[1px] h-6 lg:h-10 bg-zinc-600 group-hover:bg-brand-orange group-focus:bg-brand-orange transition-colors"></div>
-                        <div class="hidden md:block absolute -bottom-6 lg:-bottom-10 left-1/2 w-2 h-2 bg-zinc-300 rounded-full transform -translate-x-1/2 info-dot group-hover:bg-brand-orange group-focus:bg-brand-orange group-hover:shadow-[0_0_15px_#e85d22] transition-colors animate-pulse"></div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
 
     </div>
 
