@@ -11,15 +11,15 @@
 
     <style>
         @font-face {
-            font-family: 'Empresa Sans'; /* Nome que você usará no Tailwind */
+            font-family: 'Empresa Sans'; 
             src: url('fonts/EmpresaSans-Regular.otf') format('opentype');
-            font-weight: 400; /* Peso da fonte (ex: normal) */
+            font-weight: 400; 
             font-style: normal;
-            font-display: swap; /* Garante que o texto seja visível durante o carregamento da fonte */
+            font-display: swap; 
         }
         @font-face {
             font-family: 'Empresa Sans';
-            src: url('fonts/EmpresaSans-Medium.otf') format('opentype'); /* Exemplo para um peso médio */
+            src: url('fonts/EmpresaSans-Medium.otf') format('opentype'); 
             font-weight: 500;
             font-style: normal;
             font-display: swap;
@@ -60,17 +60,6 @@
     </script>
 
     <style>
-        /* Ajustes para a animação do Scroll (Vídeo) */
-        .feature-box {
-            will-change: transform, opacity;
-        }
-        
-        #animated-sandal {
-            will-change: transform;
-            /* Se for usar uma imagem PNG com fundo transparente do produto, o drop-shadow realça o 3D */
-            filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.3));
-            transition: transform 0.1s ease-out; /* Suaviza as mudanças do JS */
-        }
 
         /* Modal transitions */
         #mediaModal {
@@ -137,28 +126,12 @@
     <!-- Fundo base da página que muda de cor suavemente -->
     <div id="page-bg" class="fixed inset-0 z-[-2] bg-white transition-colors duration-700 pointer-events-none"></div>
 
-    <!-- 
-        A MÁGICA: IMAGEM FIXA ÚNICA GLOBAL
-        Esta imagem começa posicionada em cima do placeholder da seção 1 e depois voa para o centro!
-    -->
-    <div id="fixed-sandal-wrapper" class="fixed z-[-1] pointer-events-none" style="left: 0; top: 0; opacity: 0; will-change: top, left, width, height;">
-        <!-- Container que cuida apenas da flutuação inicial -->
-        <div id="sandal-floater" class="animate-float w-full h-full">
-            <img 
-                id="animated-sandal" 
-                src="img/87309487123.png" 
-                alt="Kenner Makho Animada" 
-                class="w-full h-full object-contain md:rounded-3xl origin-center pointer-events-auto"
-            >
-        </div>
-    </div>
-    
     <!-- CONTEÚDO SCROLLÁVEL -->
     <div class="relative z-10 w-full bg-transparent">
         
         <!-- SEÇÃO 1: Hero (segue a imagem fantasma ficar atento!!!)--> 
-        <section id="hero-section" class="flex items-center relative pt-10 pb-10">
-            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 px-5 md:px-8 xl:px-0 items-start">
+        <section id="hero-section" class="flex items-center relative pt-10 pb-10 min-h-[70vh]">
+            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 px-5 md:px-8 items-center">
                 
                 <!-- Coluna de Texto (Esquerda) -->
                 <!-- Mobile First: Fundo com blur, centralizado. Desktop: sem fundo, alinhado à esquerda -->
@@ -191,14 +164,12 @@
                     </button>
                 </div>
                 
-                <!-- Coluna da Imagem Placeholder (Direita) -->
-                <!-- MUDANÇA AQUI: Adicionei lg:-mt-16 nesta div abaixo para puxar a imagem para cima no desktop -->
-                <div class="relative z-10 flex justify-center lg:justify-end mt-4 md:mt-0 lg:-mt-40">
+                <!-- Coluna da Imagem (Direita) -->
+                <div class="relative z-10 flex justify-center lg:justify-end mt-4 md:mt-0">
                     <img 
-                        id="hero-placeholder"
-                        src="https://images.unsplash.com/photo-1603487742131-4160ec999306?q=80&w=800&auto=format&fit=crop" 
+                        src="img/87309487123.png" 
                         alt="Kenner Makho" 
-                        class="w-full max-w-lg object-contain rounded-3xl opacity-0 pointer-events-none"
+                        class="w-full max-w-lg object-contain rounded-3xl drop-shadow-2xl"
                     >
                 </div>
             </div>
@@ -207,98 +178,124 @@
         <!-- Seção 4: Programação (Cards) - Agora com fundo claro para contrastar -->
         <section class="w-full py-24 px-6 relative z-20">
             <div class="max-w-7xl mx-auto">
-                <div class="flex items-center justify-center gap-4 mb-16">
+                <div class="flex items-center justify-center gap-4">
                     <div class="h-0.5 bg-black w-16 md:w-32 hidden md:block"></div>
                     <h3 class="text-3xl md:text-4xl font-extrabold text-black text-center uppercase tracking-wide [text-shadow:_0_0_10px_white,_0_0_15px_rgba(255,255,255,0.8)]">
-                        Live de Lançamento <span class="text-orange-500 [text-shadow:none]">-</span> Makho <br class="md:hidden">Programação
+                        Live de Lançamento Makho 
                     </h3>
                     <div class="h-0.5 bg-black w-16 md:w-32 hidden md:block"></div>
                 </div>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-black text-center uppercase tracking-wide [text-shadow:_0_0_10px_white,_0_0_15px_rgba(255,255,255,0.8)] mb-16">
+                            Programação
+                </h3>
+                <!-- Container Principal -->
+<!-- overflow-hidden impede que a tela crie barra de rolagem horizontal -->
+<!-- lg:overflow-visible permite que as sombras não sejam cortadas no desktop -->
+<div class="relative w-full max-w-7xl mx-auto overflow-hidden lg:overflow-visible py-10">
+    
+    <!-- Pista do Carrossel -->
+    <!-- flex: coloca os itens lado a lado -->
+    <!-- w-max: faz a div ter a largura exata do conteúdo (8 cards no total) -->
+    <!-- lg:w-full lg:grid lg:grid-cols-4: no desktop (>=1024px) desativa o flex e cria um grid de 4 colunas -->
+    <!-- lg:animar-none: desliga a animação no desktop -->
+    <div class="flex w-max gap-6 animar-carrossel lg:!transform-none lg:w-full lg:grid lg:grid-cols-4 lg:animate-none">
+        
+        <!-- ========================================== -->
+        <!-- GRUPO 1 (Sempre visível)                   -->
+        <!-- ========================================== -->
 
-                <!-- ABERTURA DO GRID -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                    
-                    <!-- Card 1 -->
-                    <div class="bg-gray-50 rounded-xl p-6 flex flex-col h-full transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
-                        <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight">Mercado de<br>Slides<br>no Brasil</h4>
-                        <div class="w-full h-px bg-gray-300 mb-4"></div>
-                        <p class="text-gray-600 text-sm flex-grow">Entenda tendências, comportamento e posicionamento da categoria.</p>
-                        <div class="mt-6 font-extrabold text-black logo-font text-xl tracking-widest">KENNER</div>
-                    </div>
+        <!-- Card 1 (Antigo 2) -->
+        <!-- Adicionei 'w-72 shrink-0 lg:w-auto' para manter a largura fixa no mobile e fluida no desktop -->
+        <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
+            <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight text-orange-500">Makho:<br><span class="text-black">A slide mais<br>confortável<br>da Kenner</span></h4>
+            <div class="w-full h-px bg-gray-300 mb-4"></div>
+            <p class="text-gray-600 text-sm flex-grow">Descubra os diferenciais, tecnologia e conceito do produto.</p>
+        </div>
 
-                    <!-- Card 2 -->
-                    <div class="bg-gray-50 rounded-xl p-6 flex flex-col h-full transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
-                        <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight text-orange-500">Makho:<br><span class="text-black">A slide mais<br>confortável<br>da Kenner</span></h4>
-                        <div class="w-full h-px bg-gray-300 mb-4"></div>
-                        <p class="text-gray-600 text-sm flex-grow">Descubra os diferenciais, tecnologia e conceito do produto.</p>
-                        <div class="mt-6 font-extrabold text-black logo-font text-xl tracking-widest">KENNER</div>
-                    </div>
+        <!-- Card 2 (Antigo 3) -->
+        <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
+            <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight">Orientações<br>de Exposição</h4>
+            <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+            <p class="text-gray-600 text-sm flex-grow">Como destacar o produto no PDV e vender mais.</p>
+        </div>
 
-                    <!-- Card 3 -->
-                    <div class="bg-gray-50 rounded-xl p-6 flex flex-col h-full transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
-                        <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight">Orientações<br>de Exposição</h4>
-                        <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
-                        <p class="text-gray-600 text-sm flex-grow">Como destacar o produto no PDV e vender mais.</p>
-                        <div class="mt-6 font-extrabold text-black logo-font text-xl tracking-widest">KENNER</div>
-                    </div>
+        <!-- Card 3 (Antigo 4) -->
+        <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
+            <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight">O que vem<br>por aí (Digital)</h4>
+            <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+            <p class="text-gray-600 text-sm flex-grow">Campanhas, redes sociais e como a marca vai impulsionar o produto.</p>
+        </div>
 
-                    <!-- Card 4 -->
-                    <div class="bg-gray-50 rounded-xl p-6 flex flex-col h-full transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
-                        <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight">O que vem<br>por aí (Digital)</h4>
-                        <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
-                        <p class="text-gray-600 text-sm flex-grow">Campanhas, redes sociais e como a marca vai impulsionar o produto.</p>
-                        <div class="mt-6 font-extrabold text-black logo-font text-xl tracking-widest">KENNER</div>
-                    </div>
+        <!-- Card 4 (Antigo 5 - Destaque) -->
+        <div class="w-72 shrink-0 lg:w-auto bg-orange-500 rounded-xl p-6 flex flex-col min-h-[320px] transform md:-translate-y-2 transition-transform duration-300 text-white shadow-[0_0_25px_10px_rgba(249,115,22,0.4)] border border-orange-400">
+            <h4 class="font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Momento<br>de Interação</h4>
+            <div class="w-full h-px bg-white/30 mb-4 mt-4"></div>
+            <p class="text-white/90 text-sm flex-grow text-center">Perguntas, troca com o time e brindes especiais ao vivo.</p>
+        </div>
 
-                    <!-- Card 5 (Destaque) -->
-                    <div class="bg-orange-500 rounded-xl p-6 flex flex-col h-full transform md:-translate-y-2 transition-transform duration-300 text-white shadow-[0_0_25px_10px_rgba(249,115,22,0.4)] border border-orange-400">
-                        <h4 class="font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Momento<br>de Interação</h4>
-                        <div class="w-full h-px bg-white/30 mb-4 mt-4"></div>
-                        <p class="text-white/90 text-sm flex-grow text-center">Perguntas, troca com o time e brindes especiais ao vivo.</p>
-                        <div class="mt-6 font-extrabold text-black logo-font text-2xl tracking-widest text-center">KENNER</div>
-                    </div>
+        <!-- ========================================== -->
+        <!-- GRUPO 2 (Cópia exata para o efeito infinito) -->
+        <!-- Note a classe 'lg:hidden': esconde estas cópias no desktop -->
+        <!-- ========================================== -->
 
-                </div> <!-- FECHAMENTO DO GRID (Agora no lugar certo!) -->
-            </div>
-        </section>
+        <!-- Cópia do Card 1 -->
+        <div class="w-72 shrink-0 lg:hidden bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
+            <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight text-orange-500">Makho:<br><span class="text-black">A slide mais<br>confortável<br>da Kenner</span></h4>
+            <div class="w-full h-px bg-gray-300 mb-4"></div>
+            <p class="text-gray-600 text-sm flex-grow">Descubra os diferenciais, tecnologia e conceito do produto.</p>
+        </div>
 
-        <!-- SEÇÃO 2: Scroll Animation Parallax -->
-        <section id="features-scroll" class="relative w-full z-10">
-            
-            <!-- Diferencial 1 -->
-            <div class="h-screen flex items-end pb-32 md:pb-0 justify-center md:items-center md:justify-start px-4 md:px-6 lg:px-32">
-                <div class="feature-box bg-white/95 backdrop-blur p-6 md:p-8 shadow-2xl w-full max-w-sm rounded-xl border-l-8 border-brand-orange transform transition-all duration-700 translate-y-24 opacity-0 pointer-events-auto">
-                    <h3 class="text-2xl md:text-3xl font-black mb-2 md:mb-3 uppercase text-black">Arquitetura Robusta</h3>
-                    <p class="text-sm md:text-lg text-gray-600 leading-relaxed">
-                        Linhas marcantes e um design pensado para impactar. A estrutura externa protege e garante a durabilidade extrema da Makho.
-                    </p>
-                </div>
-            </div>
+        <!-- Cópia do Card 2 -->
+        <div class="w-72 shrink-0 lg:hidden bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
+            <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight">Orientações<br>de Exposição</h4>
+            <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+            <p class="text-gray-600 text-sm flex-grow">Como destacar o produto no PDV e vender mais.</p>
+        </div>
 
-            <!-- Diferencial 2 -->
-            <div class="h-screen flex items-end pb-32 md:pb-0 justify-center md:items-center md:justify-end px-4 md:px-6 lg:px-32">
-                <div class="feature-box bg-black/95 backdrop-blur p-6 md:p-8 shadow-2xl w-full max-w-sm rounded-xl border-r-8 border-brand-orange transform transition-all duration-700 translate-y-24 opacity-0 pointer-events-auto">
-                    <h3 class="text-2xl md:text-3xl font-black mb-2 md:mb-3 uppercase text-white">Ergonomia Absoluta</h3>
-                    <p class="text-sm md:text-lg text-gray-300 leading-relaxed">
-                        O formato interno abraça o seu pé. Palmilha desenhada milimetricamente para absorção de impacto e descanso prolongado.
-                    </p>
-                </div>
-            </div>
+        <!-- Cópia do Card 3 -->
+        <div class="w-72 shrink-0 lg:hidden bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
+            <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight">O que vem<br>por aí (Digital)</h4>
+            <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+            <p class="text-gray-600 text-sm flex-grow">Campanhas, redes sociais e como a marca vai impulsionar o produto.</p>
+        </div>
 
-            <!-- Diferencial 3 -->
-            <div class="h-screen flex items-end pb-32 md:pb-0 justify-center md:items-center md:justify-start px-4 md:px-6 lg:px-32">
-                <div class="feature-box bg-white/95 backdrop-blur p-6 md:p-8 shadow-2xl w-full max-w-sm rounded-xl border-l-8 border-brand-orange transform transition-all duration-700 translate-y-24 opacity-0 pointer-events-auto">
-                    <h3 class="text-2xl md:text-3xl font-black mb-2 md:mb-3 uppercase text-black">Solado Tratorado</h3>
-                    <p class="text-sm md:text-lg text-gray-600 leading-relaxed">
-                        Aderência total em qualquer superfície. O solado esportivo traz a tecnologia off-road para o seu dia a dia urbano.
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Espaço final reduzido para o scroll emendar direto na seção 3 -->
-            <div class="h-[10vh] md:h-[20vh]"></div>
-        </section>
+        <!-- Cópia do Card 4 -->
+        <div class="w-72 shrink-0 lg:hidden bg-orange-500 rounded-xl p-6 flex flex-col min-h-[320px] transform md:-translate-y-2 transition-transform duration-300 text-white shadow-[0_0_25px_10px_rgba(249,115,22,0.4)] border border-orange-400">
+            <h4 class="font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Momento<br>de Interação</h4>
+            <div class="w-full h-px bg-white/30 mb-4 mt-4"></div>
+            <p class="text-white/90 text-sm flex-grow text-center">Perguntas, troca com o time e brindes especiais ao vivo.</p>
+        </div>
+
     </div>
+</div>
+
+            </div>
+        </section>
+
+    </div>
+
+    
+
+    <!-- Estilos da Animação do Carrossel -->
+<style>
+  /* Define o movimento contínuo da direita para a esquerda */
+  @keyframes rolagem-infinita {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 0.75rem)); /* -50% da largura total menos metade do espaço (gap) */ }
+  }
+  
+  .animar-carrossel {
+    animation: rolagem-infinita 20s linear infinite;
+    /* Ajuste os '20s' para deixar a rolagem mais rápida ou mais lenta */
+  }
+
+  /* Opcional: Pausa a animação quando o usuário coloca o dedo/mouse por cima */
+  .animar-carrossel:hover {
+    animation-play-state: paused;
+  }
+</style>
+
+
 
     <!-- 1. CSS EXTRA (Esconder a barra de rolagem horizontal) -->
     <style>
@@ -316,58 +313,7 @@
         }
     </style>
 
-    <!-- 2. HTML DO CARROSSEL -->
-    <section class="w-full py-20 bg-white">
-        <div class="max-w-[1400px] mx-auto px-6 mb-8 flex justify-between items-center">
-            <h3 class="text-3xl font-extrabold text-black uppercase tracking-wide">
-                Galeria <span class="text-orange-500">Makho</span>
-            </h3>
-        </div>
 
-        <!-- Container principal (esconde o que vazar) -->
-        <div class="relative w-full overflow-hidden">
-            
-            <!-- Pista do Carrossel (flexbox rolável) -->
-            <div id="carousel-track" class="carousel-track flex gap-4 md:gap-6 px-6 overflow-x-auto cursor-grab hide-scrollbar select-none">
-                
-                <!-- Item 1 -->
-                <div class="flex-none w-[280px] md:w-[350px] lg:w-[400px] aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
-                    <img src="carroussel/MAHKO-PRETALARANJA-001.jpg" 
-                        alt="Look 1" 
-                        class="w-full h-full object-cover transition-transform duration-700 hover:scale-110 cursor-pointer carousel-image pointer-events-none md:pointer-events-auto">
-                </div>
-
-                <!-- Item 2 -->
-                <div class="flex-none w-[280px] md:w-[350px] lg:w-[400px] aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
-                    <img src="carroussel/Slide_Makho_3900000000-3_PretaLaranja_Perspectiva.jpg" 
-                        alt="Look 2" 
-                        class="w-full h-full object-cover transition-transform duration-700 hover:scale-110 cursor-pointer carousel-image pointer-events-none md:pointer-events-auto">
-                </div>
-
-                <!-- Item 3 -->
-                <div class="flex-none w-[280px] md:w-[350px] lg:w-[400px] aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
-                    <img src="carroussel/MAHKO-PRETALARANJA-002.jpg " 
-                        alt="Look 3" 
-                        class="w-full h-full object-cover transition-transform duration-700 hover:scale-110 cursor-pointer carousel-image pointer-events-none md:pointer-events-auto">
-                </div>
-
-                <!-- Item 4 -->
-                <div class="flex-none w-[280px] md:w-[350px] lg:w-[400px] aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
-                    <img src="carroussel/Slide_Makho_3900000000-3_PretaLaranja_Lateral.jpg" 
-                        alt="Look 4" 
-                        class="w-full h-full object-cover transition-transform duration-700 hover:scale-110 cursor-pointer carousel-image pointer-events-none md:pointer-events-auto">
-                </div>
-
-                <!-- Item 5 -->
-                <div class="flex-none w-[280px] md:w-[350px] lg:w-[400px] aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
-                    <img src="carroussel/8374982394827.png" 
-                        alt="Look 5" 
-                        class="w-full h-full object-cover transition-transform duration-700 hover:scale-110 cursor-pointer carousel-image pointer-events-none md:pointer-events-auto">
-                </div>
-                
-            </div>
-        </div>
-    </section>
 
     <!-- 3. MODAL DE IMAGEM FULLSCREEN -->
     <div id="gallery-modal" class="fixed inset-0 z-[999] hidden flex items-center justify-center bg-black/95 backdrop-blur-md opacity-0 transition-opacity duration-300">
@@ -569,7 +515,7 @@
             <div class="bg-black p-1 rounded-xl shadow-[0_0_40px_rgba(232,93,34,0.3)] w-full flex items-center justify-center overflow-hidden">
                 <!-- Imagem do caminho local solicitado -->
                 <img 
-                    src="img/img/5234371b-f6f9-4579-9083-13f58958ac20.jpeg" 
+                    src="img/5234371b-f6f9-4579-9083-13f58958ac20.jpeg" 
                     alt="Imagem local da Sandália" 
                     class="max-w-full max-h-[80vh] object-contain rounded-lg"
                     onerror="this.onerror=null; this.outerHTML='<div class=\'text-center p-10 py-20 bg-gray-900 w-full rounded-lg\'><p class=\'text-brand-orange font-bold text-xl mb-2\'>Vídeo / Imagem Indisponível no Preview</p><p class=\'text-sm text-gray-400\'>Caminho local: /Users/agrestudio/.../img/img/5234371b-f6f9-4579-9083-13f58958ac20.jpeg</p><p class=\'text-sm text-gray-500 mt-4\'>No seu computador, se o arquivo existir, ele aparecerá aqui perfeitamente!</p></div>'"
@@ -607,135 +553,7 @@
             }
         });
 
-        // 2. Lógica para revelar os textos da Seção 2 (Fade In/Up)
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.remove('opacity-0', 'translate-y-24');
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                } else {
-                    entry.target.classList.add('opacity-0', 'translate-y-24');
-                    entry.target.classList.remove('opacity-100', 'translate-y-0');
-                }
-            });
-        }, { threshold: 0.4 });
-
-        document.querySelectorAll('.feature-box').forEach(box => {
-            observer.observe(box);
-        });
-
-        // 3. Scroll Animation
-        const wrapper = document.getElementById('fixed-sandal-wrapper');
-        const sandal = document.getElementById('animated-sandal');
-        const floater = document.getElementById('sandal-floater');
-        const placeholder = document.getElementById('hero-placeholder');
-        const featuresScroll = document.getElementById('features-scroll');
-        const pageBg = document.getElementById('page-bg');
-
-        let heroX, heroY, heroWidth, heroHeight;
-        let centerX, centerY;
-        let isMobile = false;
-
-        function calculateLayout() {
-            isMobile = window.innerWidth < 768;
-
-            // Pega as coordenadas e o tamanho real do placeholder escondido na seção 1
-            const rect = placeholder.getBoundingClientRect();
-            
-            heroWidth = rect.width;
-            heroHeight = rect.height;
-            // Computa a posição absoluta considerando se o usuário der refresh no meio da página
-            heroX = rect.left;
-            heroY = rect.top + window.scrollY;
-
-            // Calcula o centro da tela
-            centerX = (window.innerWidth / 2) - (heroWidth / 2);
-            
-            // Em mobile, a imagem fixa fica mais no topo (35% da altura) para não cobrir o texto embaixo
-            const targetY = isMobile ? (window.innerHeight * 0.35) : (window.innerHeight / 2);
-            centerY = targetY - (heroHeight / 2);
-
-            // Aplica as dimensões no container que viaja pela tela
-            wrapper.style.width = `${heroWidth}px`;
-            wrapper.style.height = `${heroHeight}px`;
-
-            // Chama o updateScroll para garantir que tudo posicione e, enfim, revela a imagem
-            updateScroll();
-            wrapper.style.opacity = '1';
-        }
-
-        function updateScroll() {
-            const scrollY = window.scrollY;
-            const windowHeight = window.innerHeight;
-
-            // FASE 1: Movendo a imagem do Hero pro centro da tela (dura o scroll de 1 viewport)
-            let progress1 = scrollY / windowHeight;
-            progress1 = Math.max(0, Math.min(1, progress1));
-            
-            // Easing suave (Smooth Step) para o movimento ser bem agradável
-            const ease = progress1 * progress1 * (3 - 2 * progress1);
-
-            // Calcula a posição XY atual (mesclando entre Hero position e Center position)
-            const currentX = heroX + (centerX - heroX) * ease;
-            const currentY = (heroY - scrollY) + (centerY - (heroY - scrollY)) * ease;
-
-            wrapper.style.left = `${currentX}px`;
-            wrapper.style.top = `${currentY}px`;
-
-            // Pausa a animação de flutuação assim que começamos a rolar
-            if (scrollY > 10) {
-                floater.classList.remove('animate-float');
-            } else {
-                floater.classList.add('animate-float');
-            }
-
-            // Alterna o fundo da página (do branco da seção 1 pro cinza claro da seção 2)
-            if (progress1 > 0.5) {
-                pageBg.classList.replace('bg-white', 'bg-gray-50');
-            } else {
-                pageBg.classList.replace('bg-gray-50', 'bg-white');
-            }
-
-            // FASE 2: Zoom e Rotação na Seção de Features
-            const featuresTop = featuresScroll.getBoundingClientRect().top;
-            let progress2 = 0;
-            
-            if (featuresTop <= 0) {
-                const featuresHeight = featuresScroll.offsetHeight;
-                // Progresso baseado apenas no espaço da seção de features
-                progress2 = Math.abs(featuresTop) / (featuresHeight - windowHeight);
-                progress2 = Math.max(0, Math.min(1, progress2));
-            }
-
-            // Aplica o zoom e rotação baseados no scroll da segunda seção
-            // No mobile, o zoom é menor (1.2x max) para a imagem não estourar a tela. No desktop é 1.8x.
-            const maxScale = isMobile ? 1.2 : 1.8;
-            const scale = 1 + (progress2 * (maxScale - 1));
-            
-            // Rotação um pouco mais contida no mobile também
-            const maxRotate = isMobile ? 10 : 15;
-            const rotate = Math.sin(progress2 * Math.PI * 1.5) * maxRotate;
-
-            sandal.style.transform = `scale(${scale}) rotate(${rotate}deg)`;
-        }
-
-        // Listener de otimização de resize
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(calculateLayout, 100);
-        });
-
-        window.addEventListener('scroll', updateScroll);
-
-        // Garante que o cálculo das medidas só seja feito depois que a imagem invisível carregar seu tamanho
-        if (placeholder.complete) {
-            calculateLayout();
-        } else {
-            placeholder.onload = calculateLayout;
-        }
-
-        // 4. Lógica do Contador
+        // 2. Lógica do Contador
         // Define a data e hora exatas da live: 29 de Abril de 2026, às 9:00 da manhã.
         const targetDate = new Date('2026-04-29T09:00:00');
         let countdownInterval; // Declarar fora para ser acessível por clearInterval
