@@ -120,18 +120,18 @@
     <!-- CONTEÚDO SCROLLÁVEL -->
     <div class="relative z-10 w-full bg-transparent">
         
-        <!-- SEÇÃO 1: Hero (Baseada na sua imagem) -->
-        <section id="hero-section" class="min-h-screen flex items-center relative pt-28 md:pt-20 pb-12 md:pb-10">
-            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 px-5 md:px-8 xl:px-0 items-center">
+        <!-- SEÇÃO 1: Hero (Baseada na sua imagem) --> 
+        <section id="hero-section" class="flex items-center relative pt-20 pb-10">
+            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 px-5 md:px-8 xl:px-0 items-start">
                 
                 <!-- Coluna de Texto (Esquerda) -->
                 <!-- Mobile First: Fundo com blur, centralizado. Desktop: sem fundo, alinhado à esquerda -->
-                <div class="space-y-4 md:space-y-6 max-w-lg z-20 bg-white/85 md:bg-transparent backdrop-blur-md md:backdrop-blur-none p-6 md:p-0 rounded-3xl md:rounded-none text-center md:text-left mx-auto md:mx-0 shadow-2xl md:shadow-none">
-                    <h1 class="text-5xl md:text-6xl lg:text-[80px] font-black uppercase tracking-tight text-black leading-none">
+                <div class="space-y-4 md:space-y-4 max-w-lg z-20 bg-white/85 md:bg-transparent backdrop-blur-md md:backdrop-blur-none p-6 md:p-0 rounded-3xl md:rounded-none text-center md:text-left mx-auto md:mx-0 shadow-2xl md:shadow-none">
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-black leading-none">
                         Kenner<br>Makho
                     </h1>
                     
-                    <div class="space-y-3 md:space-y-4 mt-4 md:mt-6">
+                    <div class="space-y-3 md:space-y-3 mt-4 md:mt-4">
                         <p class="text-[0.95rem] md:text-[1.15rem] text-gray-800 font-medium leading-relaxed">
                             Conheça a primeira sandália ergonômica da Kenner: Makho.<br>
                             Conforto e robustez na medida certa!
@@ -141,8 +141,8 @@
                         </p>
                     </div>
                     
-                    <!-- Ícone + Texto Laranja -->
-                    <div class="flex items-center justify-center md:justify-start space-x-2 md:space-x-3 text-brand-orange mt-6 mb-8 md:mt-8 md:mb-10">
+                    <!-- Ícone + Texto Laranja --> 
+                    <div class="flex items-center justify-center md:justify-start space-x-2 md:space-x-3 text-brand-orange mt-6 mb-6 md:mt-6 md:mb-8">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 md:w-8 md:h-8">
                             <path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z" clip-rule="evenodd" />
                         </svg>
@@ -158,18 +158,16 @@
                 </div>
                 
                 <!-- Coluna da Imagem Placeholder (Direita) -->
-                <div class="relative z-10 flex justify-center lg:justify-end mt-4 md:mt-0">
-                    <!-- 
-                        ATENÇÃO: A imagem visível na tela agora é o "animated-sandal" fixo lá em cima.
-                        Este aqui é apenas um fantasma (opacity-0) para dizer ao JavaScript o tamanho e posição inicial corretos!
-                    -->
-                    <img 
-                        id="hero-placeholder"
-                        src="https://images.unsplash.com/photo-1603487742131-4160ec999306?q=80&w=800&auto=format&fit=crop" 
-                        alt="Kenner Makho" 
-                        class="w-full max-w-lg object-contain rounded-3xl opacity-0 pointer-events-none"
-                    >
-                </div>
+<!-- Coluna da Imagem Placeholder (Direita) -->
+<!-- MUDANÇA AQUI: Adicionei lg:-mt-16 nesta div abaixo para puxar a imagem para cima no desktop -->
+<div class="relative z-10 flex justify-center lg:justify-end mt-4 md:mt-0 lg:-mt-40">
+    <img 
+        id="hero-placeholder"
+        src="https://images.unsplash.com/photo-1603487742131-4160ec999306?q=80&w=800&auto=format&fit=crop" 
+        alt="Kenner Makho" 
+        class="w-full max-w-lg object-contain rounded-3xl opacity-0 pointer-events-none"
+    >
+</div>
             </div>
         </section>
 
