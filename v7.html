@@ -67,6 +67,37 @@
 </head>
 <body class="text-brand-dark font-sans antialiased overflow-x-hidden">
 
+    <!-- Seção 1: Barra do Logo -->
+    <header class="w-full py-6 bg-brand-dark flex justify-center items-center z-50 relative border-b border-gray-800">
+        <img src="KENNER - LOGO 1 - LARANJA.png" alt="Logo Kenner" class="h-10 md:h-12 w-auto" onerror="this.src='https://via.placeholder.com/150x50?text=KENNER+LOGO'">
+    </header>
+ 
+    <!-- Seção 2: Barra do Contador -->
+    <div class="w-full bg-brand-orange text-white py-2 md:py-4 px-2 flex flex-row justify-center items-center gap-2 md:gap-4 shadow-lg sticky top-0 z-[60] transition-all duration-300">
+        <span class="text-sm md:text-2xl font-light hidden sm:inline">faltam</span>
+        <div class="flex items-center gap-1 md:gap-4 text-center">
+            <div class="flex flex-col items-center">
+                <div class="bg-brand-dark text-white text-xl md:text-4xl font-bold py-1 px-2 md:py-2 md:px-3 rounded-md shadow-inner min-w-[40px] md:min-w-[60px]" id="days">36</div>
+                <span class="text-[10px] md:text-xs mt-1 font-semibold uppercase tracking-wider">dias</span>
+            </div>
+            <span class="text-xl md:text-4xl font-bold pb-3 md:pb-4">:</span>
+            <div class="flex flex-col items-center">
+                <div class="text-xl md:text-4xl font-bold py-1 px-1 min-w-[35px] md:min-w-[50px]" id="hours">16</div>
+                <span class="text-[10px] md:text-xs mt-1 font-semibold uppercase tracking-wider">horas</span>
+            </div>
+            <span class="text-xl md:text-4xl font-bold pb-3 md:pb-4">:</span>
+            <div class="flex flex-col items-center">
+                <div class="text-xl md:text-4xl font-bold py-1 px-1 min-w-[35px] md:min-w-[50px]" id="minutes">12</div>
+                <span class="text-[10px] md:text-xs mt-1 font-semibold uppercase tracking-wider">minutos</span>
+            </div>
+            <span class="text-xl md:text-4xl font-bold pb-3 md:pb-4">:</span>
+            <div class="flex flex-col items-center">
+                <div class="text-xl md:text-4xl font-bold py-1 px-1 min-w-[35px] md:min-w-[50px]" id="seconds">41</div>
+                <span class="text-[10px] md:text-xs mt-1 font-semibold uppercase tracking-wider">segs</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Fundo base da página que muda de cor suavemente -->
     <div id="page-bg" class="fixed inset-0 z-[-2] bg-white transition-colors duration-700 pointer-events-none"></div>
 
@@ -479,6 +510,28 @@
         } else {
             placeholder.onload = calculateLayout;
         }
+
+        // 4. Lógica do Contador
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 36);
+        targetDate.setHours(targetDate.getHours() + 16);
+        targetDate.setMinutes(targetDate.getMinutes() + 12);
+ 
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+            if (diff <= 0) return;
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            if(daysEl) daysEl.innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            if(hoursEl) hoursEl.innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            if(minutesEl) minutesEl.innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            if(secondsEl) secondsEl.innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
     </script>
 </body>
 </html>
