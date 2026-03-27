@@ -77,23 +77,23 @@
         <span class="text-sm md:text-2xl font-light hidden sm:inline">faltam</span>
         <div class="flex items-center gap-1 md:gap-4 text-center">
             <div class="flex flex-col items-center">
-                <div class="bg-brand-dark text-white text-xl md:text-4xl font-bold py-0.25 px-1 md:py-0.5 md:px-2 rounded-md shadow-inner min-w-[40px] md:min-w-[60px]" id="days">36</div>
-                <span class="text-[10px] md:text-xs mt-0.5 font-semibold uppercase tracking-wider">dias</span>
+                <div class="bg-brand-dark text-white text-xl md:text-4xl font-medium py-0.25 px-1 md:py-0.5 md:px-2 rounded-md shadow-inner min-w-[40px] md:min-w-[60px]" id="days">36</div>
+                <span class="text-[10px] md:text-xs mt-0.5 font-normal uppercase tracking-wider">dias</span>
             </div>
             <span class="text-xl md:text-4xl font-bold pb-1 md:pb-2">:</span>
             <div class="flex flex-col items-center">
-                <div class="text-xl md:text-4xl font-bold py-0.25 px-1 md:py-0.5 min-w-[35px] md:min-w-[50px]" id="hours">16</div>
-                <span class="text-[10px] md:text-xs mt-0.5 font-semibold uppercase tracking-wider">horas</span>
+                <div class="text-xl md:text-4xl font-medium py-0.25 px-1 md:py-0.5 min-w-[35px] md:min-w-[50px]" id="hours">16</div>
+                <span class="text-[10px] md:text-xs mt-0.5 font-normal uppercase tracking-wider">horas</span>
             </div>
             <span class="text-xl md:text-4xl font-bold pb-1 md:pb-2">:</span>
             <div class="flex flex-col items-center">
-                <div class="text-xl md:text-4xl font-bold py-0.25 px-1 md:py-0.5 min-w-[35px] md:min-w-[50px]" id="minutes">12</div>
-                <span class="text-[10px] md:text-xs mt-0.5 font-semibold uppercase tracking-wider">minutos</span>
+                <div class="text-xl md:text-4xl font-medium py-0.25 px-1 md:py-0.5 min-w-[35px] md:min-w-[50px]" id="minutes">12</div>
+                <span class="text-[10px] md:text-xs mt-0.5 font-normal uppercase tracking-wider">minutos</span>
             </div>
             <span class="text-xl md:text-4xl font-bold pb-1 md:pb-2">:</span>
             <div class="flex flex-col items-center">
-                <div class="text-xl md:text-4xl font-bold py-0.25 px-1 md:py-0.5 min-w-[35px] md:min-w-[50px]" id="seconds">41</div>
-                <span class="text-[10px] md:text-xs mt-0.5 font-semibold uppercase tracking-wider">segs</span>
+                <div class="text-xl md:text-4xl font-medium py-0.25 px-1 md:py-0.5 min-w-[35px] md:min-w-[50px]" id="seconds">41</div>
+                <span class="text-[10px] md:text-xs mt-0.5 font-normal uppercase tracking-wider">segs</span>
             </div>
         </div>
     </div>
@@ -178,9 +178,9 @@
     <div class="max-w-7xl mx-auto">
         <div class="flex items-center justify-center gap-4 mb-16">
             <div class="h-0.5 bg-black w-16 md:w-32 hidden md:block"></div>
-            <h3 class="text-3xl md:text-4xl font-extrabold text-black text-center uppercase tracking-wide">
-                Live de Lançamento <span class="text-orange-500">-</span> Makho <br class="md:hidden">Programação
-            </h3>
+            <h3 class="text-3xl md:text-4xl font-extrabold text-black text-center uppercase tracking-wide [text-shadow:_0_0_10px_white,_0_0_15px_rgba(255,255,255,0.8)]">
+    Live de Lançamento <span class="text-orange-500 [text-shadow:none]">-</span> Makho <br class="md:hidden">Programação
+</h3>
             <div class="h-0.5 bg-black w-16 md:w-32 hidden md:block"></div>
         </div>
 
@@ -271,6 +271,233 @@
 
     </div>
 
+    <!-- 1. CSS EXTRA (Esconder a barra de rolagem horizontal) -->
+<style>
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    /* Muda o cursor quando está arrastando */
+    .carousel-track.active {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+    }
+</style>
+
+<!-- 2. HTML DO CARROSSEL -->
+<section class="w-full py-20 bg-white">
+    <div class="max-w-[1400px] mx-auto px-6 mb-8 flex justify-between items-center">
+        <h3 class="text-3xl font-extrabold text-black uppercase tracking-wide">
+            Galeria <span class="text-orange-500">Makho</span>
+        </h3>
+    </div>
+
+    <!-- Container principal (esconde o que vazar) -->
+    <div class="relative w-full overflow-hidden">
+        
+        <!-- Pista do Carrossel (flexbox rolável) -->
+        <div id="carousel-track" class="carousel-track flex gap-4 md:gap-6 px-6 overflow-x-auto cursor-grab hide-scrollbar select-none">
+            
+            <!-- Item 1 -->
+            <div class="flex-none w-[280px] md:w-[350px] lg:w-[400px] aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
+                <img src="carroussel/MAHKO-PRETALARANJA-001.jpg" 
+                     alt="Look 1" 
+                     class="w-full h-full object-cover transition-transform duration-700 hover:scale-110 cursor-pointer carousel-image pointer-events-none md:pointer-events-auto">
+            </div>
+
+            <!-- Item 2 -->
+            <div class="flex-none w-[280px] md:w-[350px] lg:w-[400px] aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
+                <img src="carroussel/MAHKO-PRETALARANJA-002.jpg" 
+                     alt="Look 2" 
+                     class="w-full h-full object-cover transition-transform duration-700 hover:scale-110 cursor-pointer carousel-image pointer-events-none md:pointer-events-auto">
+            </div>
+
+            <!-- Item 3 -->
+            <div class="flex-none w-[280px] md:w-[350px] lg:w-[400px] aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
+                <img src="carroussel/Slide_Makho_3900000000-3_PretaLaranja_Lateral.jpg" 
+                     alt="Look 3" 
+                     class="w-full h-full object-cover transition-transform duration-700 hover:scale-110 cursor-pointer carousel-image pointer-events-none md:pointer-events-auto">
+            </div>
+
+            <!-- Item 4 -->
+            <div class="flex-none w-[280px] md:w-[350px] lg:w-[400px] aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
+                <img src="carroussel/Slide_Makho_3900000000-3_PretaLaranja_Perspectiva.jpg" 
+                     alt="Look 4" 
+                     class="w-full h-full object-cover transition-transform duration-700 hover:scale-110 cursor-pointer carousel-image pointer-events-none md:pointer-events-auto">
+            </div>
+
+            <!-- Item 5 -->
+            <div class="flex-none w-[280px] md:w-[350px] lg:w-[400px] aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
+                <img src="carroussel/MAHKO-PRETALARANJA-001.jpg" 
+                     alt="Look 5" 
+                     class="w-full h-full object-cover transition-transform duration-700 hover:scale-110 cursor-pointer carousel-image pointer-events-none md:pointer-events-auto">
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- 3. MODAL DE IMAGEM FULLSCREEN -->
+<div id="gallery-modal" class="fixed inset-0 z-[999] hidden flex items-center justify-center bg-black/95 backdrop-blur-md opacity-0 transition-opacity duration-300">
+    <!-- Botão Fechar -->
+    <button id="close-gallery-btn" class="absolute top-6 right-6 text-white/70 hover:text-orange-500 transition-colors z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </button>
+    
+    <!-- Imagem Expandida -->
+    <img id="gallery-modal-img" src="" alt="Imagem Expandida" class="max-w-[95vw] max-h-[90vh] object-contain scale-90 transition-transform duration-500 shadow-2xl rounded-sm">
+</div>
+
+<!-- 4. JAVASCRIPT DA MÁGICA -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const track = document.getElementById('carousel-track');
+        let isDragging = false;
+        let startX, scrollLeft;
+        let animationFrameId;
+        let inactivityTimeout;
+        const scrollSpeed = 0.5; // Velocidade do auto-scroll (aumente para ir mais rápido)
+        
+        // --- 1. Lógica do Loop Infinito e Auto Scroll ---
+
+        // Duplica as imagens uma vez para garantir que o carrossel pareça infinito
+        const cloneItems = () => {
+            const items = Array.from(track.children);
+            items.forEach(item => {
+                const clone = item.cloneNode(true);
+                // Re-adiciona o evento de clique no modal para os itens clonados
+                clone.querySelector('img').addEventListener('click', openImageModal);
+                track.appendChild(clone);
+            });
+        };
+        cloneItems(); // Clona os itens assim que a página carrega
+
+        const autoScroll = () => {
+            track.scrollLeft += scrollSpeed;
+            
+            // Se chegou na metade (ou seja, percorreu os itens originais), reseta para o começo silenciosamente
+            if (track.scrollLeft >= track.scrollWidth / 2) {
+                track.scrollLeft = 0;
+            }
+            animationFrameId = requestAnimationFrame(autoScroll);
+        };
+
+        const stopAutoScroll = () => {
+            cancelAnimationFrame(animationFrameId);
+        };
+
+        const resetInactivityTimer = () => {
+            stopAutoScroll();
+            clearTimeout(inactivityTimeout);
+            // Retoma o scroll sozinho após 1.5s sem mexer
+            inactivityTimeout = setTimeout(() => {
+                animationFrameId = requestAnimationFrame(autoScroll);
+            }, 1500); 
+        };
+
+        // Inicia o carrossel rolando
+        animationFrameId = requestAnimationFrame(autoScroll);
+
+        // --- 2. Lógica de Arrastar com o Mouse (Drag) ---
+
+        track.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            track.classList.add('active');
+            startX = e.pageX - track.offsetLeft;
+            scrollLeft = track.scrollLeft;
+            stopAutoScroll();
+            clearTimeout(inactivityTimeout);
+        });
+
+        track.addEventListener('mouseleave', () => {
+            isDragging = false;
+            track.classList.remove('active');
+            resetInactivityTimer();
+        });
+
+        track.addEventListener('mouseup', () => {
+            isDragging = false;
+            track.classList.remove('active');
+            resetInactivityTimer();
+        });
+
+        track.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - track.offsetLeft;
+            const walk = (x - startX) * 2; // O multiplicador '2' faz rolar mais rápido ao arrastar
+            track.scrollLeft = scrollLeft - walk;
+        });
+
+        // Pausa se usar a rodinha do mouse ou tocar no mobile
+        track.addEventListener('wheel', resetInactivityTimer);
+        track.addEventListener('touchstart', resetInactivityTimer);
+        track.addEventListener('touchend', resetInactivityTimer);
+
+
+        // --- 3. Lógica do Modal de Imagem ---
+        
+        const modal = document.getElementById('gallery-modal');
+        const modalImg = document.getElementById('gallery-modal-img');
+        const closeBtn = document.getElementById('close-gallery-btn');
+        const images = document.querySelectorAll('.carousel-image');
+
+        function openImageModal(e) {
+            // Se estiver arrastando, não abre a imagem (evita clique acidental)
+            if (isDragging) return; 
+
+            modalImg.src = e.target.src;
+            modal.classList.remove('hidden');
+            
+            // Pequeno delay para a transição de fade/scale funcionar
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalImg.classList.remove('scale-90');
+                modalImg.classList.add('scale-100');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden'; // Trava o scroll da página
+            stopAutoScroll(); // Para o carrossel enquanto estiver vendo a foto
+        }
+
+        function closeImageModal() {
+            modal.classList.add('opacity-0');
+            modalImg.classList.remove('scale-100');
+            modalImg.classList.add('scale-90');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Libera o scroll da página
+                resetInactivityTimer(); // Volta a rolar o carrossel
+            }, 300);
+        }
+
+        // Associa o clique nas imagens originais
+        images.forEach(img => {
+            img.addEventListener('click', openImageModal);
+        });
+
+        closeBtn.addEventListener('click', closeImageModal);
+        
+        // Fecha se clicar no fundo preto
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeImageModal();
+        });
+
+        // Fecha se apertar ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape" && !modal.classList.contains('hidden')) {
+                closeImageModal();
+            }
+        });
+    });
+</script>
+
     <!-- Rodapé -->
     <footer class="bg-brand-dark text-gray-400 py-12 text-center text-sm relative z-20">
         <p>&copy; 2026 Kenner. Todos os direitos reservados.</p>
@@ -291,7 +518,7 @@
             <div class="bg-black p-1 rounded-xl shadow-[0_0_40px_rgba(232,93,34,0.3)] w-full flex items-center justify-center overflow-hidden">
                 <!-- Imagem do caminho local solicitado -->
                 <img 
-                    src="/Users/agrestudio/Documents/teste01/5234371b-f6f9-4579-9083-13f58958ac20.jpeg" 
+                    src="5234371b-f6f9-4579-9083-13f58958ac20.jpeg" 
                     alt="Imagem local da Sandália" 
                     class="max-w-full max-h-[80vh] object-contain rounded-lg"
                     onerror="this.onerror=null; this.outerHTML='<div class=\'text-center p-10 py-20 bg-gray-900 w-full rounded-lg\'><p class=\'text-brand-orange font-bold text-xl mb-2\'>Vídeo / Imagem Indisponível no Preview</p><p class=\'text-sm text-gray-400\'>Caminho local: /Users/agrestudio/.../5234371b-f6f9-4579-9083-13f58958ac20.jpeg</p><p class=\'text-sm text-gray-500 mt-4\'>No seu computador, se o arquivo existir, ele aparecerá aqui perfeitamente!</p></div>'"
