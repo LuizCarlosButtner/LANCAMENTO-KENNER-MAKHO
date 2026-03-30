@@ -1,0 +1,335 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenner Makho - Lançamento</title>
+    <link rel="icon" href="img/098374019837.ico" type="image/x-icon">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Suas Fontes Locais */
+        @font-face {
+            font-family: 'Empresa Sans'; 
+            src: url('fonts/EmpresaSans-Regular.otf') format('opentype');
+            font-weight: 400; 
+            font-style: normal;
+            font-display: swap; 
+        }
+        @font-face {
+            font-family: 'Empresa Sans';
+            src: url('fonts/EmpresaSans-Medium.otf') format('opentype'); 
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Empresa Sans';
+            src: url('fonts/Kenner-BlackItalic.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* Modal transitions */
+        #mediaModal {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .infographic-balloon {
+            will-change: transform;
+        }
+        .info-dot {
+            box-shadow: 0 0 10px rgba(255,255,255,0.8);
+        }
+    </style>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // Agora usando apenas a fonte local como primária
+                        sans: ['Empresa Sans', 'sans-serif'], 
+                    },
+                    colors: {
+                        'brand-orange': '#e85d22', 
+                        'brand-dark': '#000000',
+                        kenner: {
+                            orange: '#ff5a00',
+                            dark: '#1a1a1a',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-brand-dark font-sans antialiased overflow-x-hidden">
+
+    <!-- Seção 1: Barra do Logo --> 
+    <header class="w-full py-[0.1rem] bg-brand-dark flex justify-center items-center z-50 relative border-b border-gray-800">
+        <img src="img/098709837410938847938.png" alt="Logo Kenner" class="h-10 md:h-12 w-auto">
+    </header>
+ 
+    <!-- Seção 2: Barra do Contador -->
+    <div class="w-full bg-brand-orange text-white py-0.5 md:py-0 px-2 flex flex-row justify-center items-center gap-2 md:gap-4 shadow-lg sticky top-0 z-[60] transition-all duration-300 md:h-[40px]">
+        <span id="countdown-label" class="text-sm md:text-base font-medium hidden sm:inline tracking-wide">Faltam</span>
+        <div class="flex items-center gap-1 md:gap-3 text-center h-full">
+            <div class="flex flex-col items-center justify-center">
+                <div class="bg-brand-dark text-white text-xl md:text-xl font-medium py-0.25 px-1 md:py-0 md:px-2 rounded shadow-inner min-w-[40px] md:min-w-[45px] leading-tight" id="days">36</div>
+                <span class="text-[10px] md:text-[9px] mt-0.5 md:mt-0 font-bold uppercase tracking-widest leading-none">dias</span>
+            </div>
+            <span class="text-xl md:text-lg font-bold pb-1 md:pb-0 md:-mt-3">:</span>
+            <div class="flex flex-col items-center justify-center">
+                <div class="text-xl md:text-xl font-medium py-0.25 px-1 md:py-0 min-w-[35px] md:min-w-[40px] leading-tight" id="hours">16</div>
+                <span class="text-[10px] md:text-[9px] mt-0.5 md:mt-0 font-bold uppercase tracking-widest leading-none">horas</span>
+            </div>
+            <span class="text-xl md:text-lg font-bold pb-1 md:pb-0 md:-mt-3">:</span>
+            <div class="flex flex-col items-center justify-center">
+                <div class="text-xl md:text-xl font-medium py-0.25 px-1 md:py-0 min-w-[35px] md:min-w-[40px] leading-tight" id="minutes">12</div>
+                <span class="text-[10px] md:text-[9px] mt-0.5 md:mt-0 font-bold uppercase tracking-widest leading-none">minutos</span>
+            </div>
+            <span class="text-xl md:text-lg font-bold pb-1 md:pb-0 md:-mt-3">:</span>
+            <div class="flex flex-col items-center justify-center">
+                <div class="text-xl md:text-xl font-medium py-0.25 px-1 md:py-0 min-w-[35px] md:min-w-[40px] leading-tight" id="seconds">41</div>
+                <span class="text-[10px] md:text-[9px] mt-0.5 md:mt-0 font-bold uppercase tracking-widest leading-none">segs</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fundo base -->
+    <div id="page-bg" class="fixed inset-0 z-[-2] bg-white transition-colors duration-700 pointer-events-none"></div>
+
+    <!-- CONTEÚDO -->
+    <div class="relative z-10 w-full bg-transparent">
+        
+        <!-- SEÇÃO HERO --> 
+        <section id="hero-section" class="flex items-center relative pt-10 pb-10 min-h-[70vh] mb-[200px]">
+            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 px-5 md:px-8 items-center">
+                
+                <div class="space-y-4 md:space-y-4 max-w-lg z-20 text-center lg:text-left mx-auto lg:mx-0">
+                    <img src="img/976319273691826.png" alt="Kenner Makho" class="w-full max-w-md mx-auto md:mx-0">
+                    
+                    <div class="relative z-10 flex justify-center lg:hidden w-full ">
+                        <img src="img/87309487123.png" alt="Kenner Makho" class="-mt-[9rem] -mb-[5rem] max-[497px]:-mt-[7rem] max-[497px]:-mb-[4rem] max-[400px]:-mt-[6rem] max-[400px]:-mb-[3rem] max-[345px]:-mt-[5rem] max-[345px]:-mb-[2rem] max-[264px]:-mt-[4rem] max-[264px]:mb-0 w-full max-w-lg object-contain rounded-3xl drop-shadow-2xl scale-110">
+                    </div>
+
+                    <div class="space-y-3 mt-4">
+                        <p class="text-[0.95rem] md:text-[1.15rem] text-gray-800 font-medium leading-relaxed">
+                            Conheça a primeira sandália ergonômica da Kenner: Makho.<br>
+                            Conforto e robustez na medida certa!
+                        </p>
+                        <p class="text-[0.95rem] md:text-[1.15rem] text-gray-700 leading-relaxed">
+                            Aprenda os diferenciais desse novo modelo, alavanque suas vendas e concorra a
+                        </p>
+                    </div>
+                    
+                    <div class="flex items-center justify-center md:justify-start space-x-2 md:space-x-3 text-brand-orange mt-6 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 md:w-8 md:h-8">
+                            <path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-lg sm:text-xl md:text-2xl font-black uppercase tracking-wider">Brindes Exclusivos</span>
+                    </div>
+
+                    <button 
+                        onclick="openModal()"
+                        class="w-full lg:w-auto bg-black text-white px-6 py-4 md:px-10 md:py-5 font-bold uppercase tracking-wider text-sm sm:text-base md:text-lg rounded hover:bg-brand-orange transition-colors duration-300 shadow-xl pointer-events-auto">
+                        Vem Assistir!
+                    </button>
+                </div>
+                
+                <div class="relative z-10 hidden lg:flex justify-center lg:justify-end mt-4 md:mt-0">
+                    <img src="img/87309487123.png" alt="Kenner Makho" class="w-full max-w-lg object-contain rounded-3xl drop-shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO PROGRAMAÇÃO CARDS -->
+        <div class="bg-white text-kenner-dark p-4 md:p-8 flex flex-col items-center">
+            <div class="max-w-7xl w-full mx-auto flex flex-col items-center">
+
+                <header class="text-center w-full mb-12 flex flex-col items-center">
+                    <img src="img/098709837410938847938.png" alt="Logo Kenner" class="h-[130px] object-contain">
+                    <h2 class="text-kenner-orange text-xl md:text-2xl font-bold uppercase tracking-widest">
+                        Live de Lançamento Makho
+                    </h2>
+                    <div class="flex items-center justify-center gap-4 w-full max-w-2xl">
+                        <div class="h-px bg-kenner-orange flex-grow"></div>
+                        <h1 class="text-2xl md:text-4xl font-extrabold uppercase tracking-widest text-kenner-dark">
+                            Programação
+                        </h1>
+                        <div class="h-px bg-kenner-orange flex-grow"></div>
+                    </div>
+                </header>
+
+                <main class="flex lg:grid lg:grid-cols-5 overflow-x-auto gap-6 w-full items-stretch mb-16 p-10 snap-x snap-mandatory">
+                    <!-- Card 1 -->
+                    <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-kenner-orange shadow-[0_0_25px_10px_rgba(255,90,0,0.3)] snap-center">
+                        <h4 class="font-extrabold text-xl uppercase mb-3 leading-tight text-kenner-orange text-center mt-4">Makho:<br><span class="text-kenner-dark">A slide mais<br>confortável<br>da Kenner</span></h4>
+                        <div class="w-full h-px bg-gray-300 mb-4"></div>
+                        <p class="text-gray-600 text-sm flex-grow text-center">Descubra os diferenciais, tecnologia e conceito do produto.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-kenner-orange shadow-[0_0_25px_10px_rgba(255,90,0,0.3)] snap-center">
+                        <h4 class="text-kenner-dark font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Mercado<br>de slides<br>no Brasil</h4>
+                        <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+                        <p class="text-gray-600 text-sm flex-grow text-center">Entenda tendências, comportamento e posicionamento da categoria.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-kenner-orange shadow-[0_0_25px_10px_rgba(255,90,0,0.3)] snap-center">
+                        <h4 class="text-kenner-dark font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Orientações<br>de exposição</h4>
+                        <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+                        <p class="text-gray-600 text-sm flex-grow text-center">Como destacar o produto no PDV e vender mais.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-kenner-orange shadow-[0_0_25px_10px_rgba(255,90,0,0.3)] snap-center">
+                        <h4 class="text-kenner-dark font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">O que vem<br>por aí (Digital)</h4>
+                        <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+                        <p class="text-gray-600 text-sm flex-grow text-center">Campanhas, redes sociais e como a marca vai impulsionar o produto.</p>
+                    </div>
+
+                    <!-- Card 5 (Destaque Laranja - Corrigido) -->
+                    <div class="w-72 shrink-0 lg:w-auto bg-kenner-orange rounded-xl p-6 flex flex-col min-h-[320px] transform lg:-translate-y-2 transition-transform duration-300 text-white shadow-[0_0_25px_10px_rgba(255,90,0,0.4)] border border-kenner-orange snap-center">
+                        <h4 class="font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Momento<br>de Interação</h4>
+                        <div class="w-full h-px bg-white/30 mb-4 mt-4"></div>
+                        <p class="text-white/90 text-sm flex-grow text-center">Perguntas, troca com o time e brindes especiais ao vivo.</p>
+                    </div>
+                </main>
+
+                <!-- Horário e Linhas Laterais -->
+                <div class="flex items-center justify-center gap-4 w-full max-w-2xl mt-4 mb-4">
+                    <!-- Linha da Esquerda -->
+                    <div class="h-px bg-kenner-orange flex-grow"></div>
+                    
+                    <!-- Centro: Ícone e Texto -->
+                    <div class="flex items-center gap-3 px-2 shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-kenner-orange">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span class="text-lg md:text-xl font-bold uppercase tracking-wide text-kenner-dark">
+                            09h e 14h horario de brasilia <span class="mx-1 text-gray-400">|</span> Ao Vivo
+                        </span>
+                    </div>
+
+                    <!-- Linha da Direita -->
+                    <div class="h-px bg-kenner-orange flex-grow"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER FINAL -->
+    <footer class="w-full bg-neutral-950 text-neutral-400 py-6 border-t border-neutral-900 z-50 relative">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <img src="img/098709837410938847938.png" alt="Logo Kenner" class="h-6 w-auto object-contain">
+            <div class="text-sm text-center md:text-left font-light tracking-wide">
+                &copy; 2026 Kenner. Todos os direitos reservados.
+            </div>
+            <div class="flex items-center gap-6 text-sm font-medium">
+                <div class="w-px h-4 bg-neutral-800"></div>
+                <a href="https://www.instagram.com/kenner/?hl=pt" target="_blank" class="hover:text-orange-500 transition-colors duration-300" aria-label="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL VEM ASSISTIR -->
+    <div id="mediaModal" class="fixed inset-0 z-50 hidden opacity-0 flex items-center justify-center">
+        <div class="absolute inset-0 bg-black bg-opacity-90 backdrop-blur-md" onclick="closeModal()"></div>
+        <div class="relative z-10 w-full max-w-4xl mx-auto p-4 flex flex-col items-center pointer-events-auto">
+            <button onclick="closeModal()" class="absolute -top-12 right-4 md:-right-4 text-white hover:text-brand-orange text-5xl transition-colors font-light">
+                &times;
+            </button>
+            <div class="bg-black p-1 rounded-xl shadow-[0_0_40px_rgba(232,93,34,0.3)] w-full flex items-center justify-center overflow-hidden">
+                <img 
+                    src="img/40198374098173.png"
+                    alt="Imagem local da Sandália" 
+                    class="max-w-full max-h-[80vh] object-contain rounded-lg"
+                    onerror="this.onerror=null; this.outerHTML='<div class=\'text-center p-10 py-20 bg-gray-900 w-full rounded-lg\'><p class=\'text-brand-orange font-bold text-xl mb-2\'>Vídeo / Imagem Indisponível no Preview</p><p class=\'text-sm text-gray-400\'>Caminho local: /Users/agrestudio/.../img/img/5234371b-f6f9-4579-9083-13f58958ac20.jpeg</p><p class=\'text-sm text-gray-500 mt-4\'>No seu computador, se o arquivo existir, ele aparecerá aqui perfeitamente!</p></div>'"
+                >
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        const modal = document.getElementById('mediaModal');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        const targetDate = new Date('2026-04-29T09:00:00');
+        let countdownInterval; 
+ 
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                clearInterval(countdownInterval); 
+                const label = document.getElementById('countdown-label');
+                if (label) {
+                    label.innerText = 'AO VIVO';
+                    label.classList.add('animate-pulse', 'text-lg', 'font-bold'); 
+                    label.classList.remove('font-medium'); 
+                }
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+                return;
+            }
+            
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            if(daysEl) daysEl.innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            if(hoursEl) hoursEl.innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            if(minutesEl) minutesEl.innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            if(secondsEl) secondsEl.innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }
+        countdownInterval = setInterval(updateCountdown, 1000); 
+        updateCountdown();
+    </script>
+</body>
+</html>

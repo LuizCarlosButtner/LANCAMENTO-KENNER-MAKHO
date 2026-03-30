@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
+    <!-- Google Fonts: Montserrat -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: { extend: { colors: { kenner: { orange: '#ff5a00', dark: '#1a1a1a' } } } }
+  }
+</script>
+
+<!-- Configuração Tailwind da Kenner -->
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Montserrat', 'sans-serif'],
+        },
+        colors: {
+          kenner: {
+            orange: '#ff5a00',
+            dark: '#1a1a1a',
+          }
+        }
+      }
+    }
+  }
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenner Makho - Lançamento</title>
@@ -135,9 +165,14 @@
                 
                 <!-- Coluna de Texto (Esquerda) -->
                 <!-- Mobile First: Fundo com blur, centralizado. Desktop: sem fundo, alinhado à esquerda -->
-                <div class="space-y-4 md:space-y-4 max-w-lg z-20 md:bg-transparent md:backdrop-blur-none md:p-0 md:rounded-none text-center md:text-left mx-auto md:mx-0 md:shadow-none">
-                    <img src="img/976319273691826.png" alt="Kenner Makho" class="w-full max-w-md">
+                <div class="space-y-4 md:space-y-4 max-w-lg z-20 md:bg-transparent md:backdrop-blur-none md:p-0 md:rounded-none text-center lg:text-left mx-auto lg:mx-0 md:shadow-none">
+                    <img src="img/976319273691826.png" alt="Kenner Makho" class="w-full max-w-md mx-auto md:mx-0">
                     
+                    <!-- Imagem do Produto (Apenas Mobile: Abaixo do Título) -->
+                    <div class="relative z-10 flex justify-center lg:hidden w-full ">
+                        <img src="img/87309487123.png" alt="Kenner Makho" class="-mt-[9rem] -mb-[5rem] max-[497px]:-mt-[7rem] max-[497px]:-mb-[4rem] max-[400px]:-mt-[6rem] max-[400px]:-mb-[3rem] max-[345px]:-mt-[5rem] max-[345px]:-mb-[2rem] max-[264px]:-mt-[4rem] max-[264px]:mb-0 w-full max-w-lg object-contain rounded-3xl drop-shadow-2xl scale-110">
+                    </div>
+
                     <div class="space-y-3 md:space-y-3 mt-4 md:mt-4">
                         <p class="text-[0.95rem] md:text-[1.15rem] text-gray-800 font-medium leading-relaxed">
                             Conheça a primeira sandália ergonômica da Kenner: Makho.<br>
@@ -158,14 +193,14 @@
 
                     <!-- Botão -->
                     <button 
-                        onclick="openModal()" 
-                        class="w-full md:w-auto bg-black text-white px-6 py-4 md:px-10 md:py-5 font-bold uppercase tracking-wider text-sm sm:text-base md:text-lg rounded hover:bg-brand-orange transition-colors duration-300 shadow-xl pointer-events-auto">
+                        onclick="openModal()"
+                        class="w-full lg:w-auto bg-black text-white px-6 py-4 md:px-10 md:py-5 font-bold uppercase tracking-wider text-sm sm:text-base md:text-lg rounded hover:bg-brand-orange transition-colors duration-300 shadow-xl pointer-events-auto">
                         Vem Assistir!
                     </button>
                 </div>
                 
                 <!-- Coluna da Imagem (Direita) -->
-                <div class="relative z-10 flex justify-center lg:justify-end mt-4 md:mt-0">
+                <div class="relative z-10 hidden lg:flex justify-center lg:justify-end mt-4 md:mt-0">
                     <img 
                         src="img/87309487123.png" 
                         alt="Kenner Makho" 
@@ -175,302 +210,94 @@
             </div>
         </section>
 
-        <!-- Seção 4: Programação (Cards) - Agora com fundo claro para contrastar -->
-        <section class="w-full py-24 px-6 relative z-20">
-            <div class="max-w-7xl mx-auto">
-                <div class="flex items-center justify-center gap-4">
-                    <div class="h-0.5 bg-black w-16 md:w-32 hidden md:block"></div>
-                    <h3 class="text-3xl md:text-4xl font-extrabold text-black text-center uppercase tracking-wide [text-shadow:_0_0_10px_white,_0_0_15px_rgba(255,255,255,0.8)]">
-                        Live de Lançamento Makho 
-                    </h3>
-                    <div class="h-0.5 bg-black w-16 md:w-32 hidden md:block"></div>
-                </div>
-                <h3 class="text-3xl md:text-4xl font-extrabold text-black text-center uppercase tracking-wide [text-shadow:_0_0_10px_white,_0_0_15px_rgba(255,255,255,0.8)] mb-16">
-                            Programação
-                </h3>
-                <!-- Container Principal -->
-<!-- overflow-hidden impede que a tela crie barra de rolagem horizontal -->
-<!-- lg:overflow-visible permite que as sombras não sejam cortadas no desktop -->
-<div class="relative w-full max-w-7xl mx-auto overflow-hidden lg:overflow-visible py-10">
-    
-    <!-- Pista do Carrossel -->
-    <!-- flex: coloca os itens lado a lado -->
-    <!-- w-max: faz a div ter a largura exata do conteúdo (8 cards no total) -->
-    <!-- lg:w-full lg:grid lg:grid-cols-4: no desktop (>=1024px) desativa o flex e cria um grid de 4 colunas -->
-    <!-- lg:animar-none: desliga a animação no desktop -->
-    <div class="flex w-max gap-6 animar-carrossel lg:!transform-none lg:w-full lg:grid lg:grid-cols-4 lg:animate-none">
-        
-        <!-- ========================================== -->
-        <!-- GRUPO 1 (Sempre visível)                   -->
-        <!-- ========================================== -->
-
-        <!-- Card 1 (Antigo 2) -->
-        <!-- Adicionei 'w-72 shrink-0 lg:w-auto' para manter a largura fixa no mobile e fluida no desktop -->
-        <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
-            <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight text-orange-500">Makho:<br><span class="text-black">A slide mais<br>confortável<br>da Kenner</span></h4>
-            <div class="w-full h-px bg-gray-300 mb-4"></div>
-            <p class="text-gray-600 text-sm flex-grow">Descubra os diferenciais, tecnologia e conceito do produto.</p>
-        </div>
-
-        <!-- Card 2 (Antigo 3) -->
-        <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
-            <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight">Orientações<br>de Exposição</h4>
-            <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
-            <p class="text-gray-600 text-sm flex-grow">Como destacar o produto no PDV e vender mais.</p>
-        </div>
-
-        <!-- Card 3 (Antigo 4) -->
-        <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
-            <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight">O que vem<br>por aí (Digital)</h4>
-            <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
-            <p class="text-gray-600 text-sm flex-grow">Campanhas, redes sociais e como a marca vai impulsionar o produto.</p>
-        </div>
-
-        <!-- Card 4 (Antigo 5 - Destaque) -->
-        <div class="w-72 shrink-0 lg:w-auto bg-orange-500 rounded-xl p-6 flex flex-col min-h-[320px] transform md:-translate-y-2 transition-transform duration-300 text-white shadow-[0_0_25px_10px_rgba(249,115,22,0.4)] border border-orange-400">
-            <h4 class="font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Momento<br>de Interação</h4>
-            <div class="w-full h-px bg-white/30 mb-4 mt-4"></div>
-            <p class="text-white/90 text-sm flex-grow text-center">Perguntas, troca com o time e brindes especiais ao vivo.</p>
-        </div>
-
-        <!-- ========================================== -->
-        <!-- GRUPO 2 (Cópia exata para o efeito infinito) -->
-        <!-- Note a classe 'lg:hidden': esconde estas cópias no desktop -->
-        <!-- ========================================== -->
-
-        <!-- Cópia do Card 1 -->
-        <div class="w-72 shrink-0 lg:hidden bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
-            <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight text-orange-500">Makho:<br><span class="text-black">A slide mais<br>confortável<br>da Kenner</span></h4>
-            <div class="w-full h-px bg-gray-300 mb-4"></div>
-            <p class="text-gray-600 text-sm flex-grow">Descubra os diferenciais, tecnologia e conceito do produto.</p>
-        </div>
-
-        <!-- Cópia do Card 2 -->
-        <div class="w-72 shrink-0 lg:hidden bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
-            <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight">Orientações<br>de Exposição</h4>
-            <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
-            <p class="text-gray-600 text-sm flex-grow">Como destacar o produto no PDV e vender mais.</p>
-        </div>
-
-        <!-- Cópia do Card 3 -->
-        <div class="w-72 shrink-0 lg:hidden bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-orange-500 shadow-[0_0_25px_10px_rgba(249,115,22,0.4)]">
-            <h4 class="text-black font-bold text-lg uppercase mb-3 leading-tight">O que vem<br>por aí (Digital)</h4>
-            <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
-            <p class="text-gray-600 text-sm flex-grow">Campanhas, redes sociais e como a marca vai impulsionar o produto.</p>
-        </div>
-
-        <!-- Cópia do Card 4 -->
-        <div class="w-72 shrink-0 lg:hidden bg-orange-500 rounded-xl p-6 flex flex-col min-h-[320px] transform md:-translate-y-2 transition-transform duration-300 text-white shadow-[0_0_25px_10px_rgba(249,115,22,0.4)] border border-orange-400">
-            <h4 class="font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Momento<br>de Interação</h4>
-            <div class="w-full h-px bg-white/30 mb-4 mt-4"></div>
-            <p class="text-white/90 text-sm flex-grow text-center">Perguntas, troca com o time e brindes especiais ao vivo.</p>
-        </div>
+ 
 
     </div>
+<div class="bg-white text-kenner-dark p-4 md:p-8 flex flex-col items-center">
+  <div class="max-w-7xl w-full mx-auto flex flex-col items-center">
+
+    <!-- Header Section -->
+    <header class="text-center w-full mb-12 flex flex-col items-center">
+      <!-- Espaço para o PNG do Logo da Kenner -->
+      <img
+        src="img/098709837410938847938.png"
+        alt="Logo Kenner"
+        class="h-[130px] object-contain mb-6"
+      >
+
+      <h2 class="text-kenner-orange text-xl md:text-2xl font-bold uppercase tracking-widest mb-3">
+        Live de Lançamento Makho
+      </h2>
+
+      <div class="flex items-center justify-center gap-4 w-full max-w-2xl">
+        <div class="h-px bg-kenner-orange flex-grow"></div>
+        <h1 class="text-2xl md:text-4xl font-extrabold uppercase tracking-widest text-kenner-dark">
+          Programação
+        </h1>
+        <div class="h-px bg-kenner-orange flex-grow"></div>
+      </div>
+    </header>
+
+    <!-- Cards Section -->
+    <main class="flex lg:grid lg:grid-cols-5 overflow-x-auto gap-6 w-full items-stretch mb-16 p-10 snap-x snap-mandatory">
+
+      <!-- Card 1 -->
+      <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-solid bg-[#ff5a00] shadow-[0_0_25px_10px_rgba(255,90,0,0.3)] snap-center">
+        <h4 class="font-extrabold text-xl uppercase mb-3 leading-tight text-kenner-orange text-center mt-4">Makho:<br><span class="text-kenner-dark">A slide mais<br>confortável<br>da Kenner</span></h4>
+        <div class="w-full h-px bg-gray-300 mb-4"></div>
+        <p class="text-gray-600 text-sm flex-grow text-center">Descubra os diferenciais, tecnologia e conceito do produto.</p>
+      </div>
+
+      <!-- Card 2 (Mercado de slides) -->
+      <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-kenner-orange shadow-[0_0_25px_10px_rgba(255,90,0,0.3)] snap-center">
+        <h4 class="text-kenner-dark font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Mercado<br>de slides<br>no Brasil</h4>
+        <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+        <p class="text-gray-600 text-sm flex-grow text-center">Entenda tendências, comportamento e posicionamento da categoria.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-kenner-orange shadow-[0_0_25px_10px_rgba(255,90,0,0.3)] snap-center">
+        <h4 class="text-kenner-dark font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Orientações<br>de exposição</h4>
+        <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+        <p class="text-gray-600 text-sm flex-grow text-center">Como destacar o produto no PDV e vender mais.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-kenner-orange shadow-[0_0_25px_10px_rgba(255,90,0,0.3)] snap-center">
+        <h4 class="text-kenner-dark font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">O que vem<br>por aí (Digital)</h4>
+        <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+        <p class="text-gray-600 text-sm flex-grow text-center">Campanhas, redes sociais e como a marca vai impulsionar o produto.</p>
+      </div>
+
+      <!-- Card 5 (Destaque Laranja) -->
+      <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-kenner-orange shadow-[0_0_25px_10px_rgba(255,90,0,0.3)] snap-center">
+        <h4 class="font-extrabold text-xl uppercase mb-3 leading-tight text-kenner-orange text-center mt-4">Momento<br><span class="text-kenner-dark">de Interação</span></h4>
+        <div class="w-full h-px bg-gray-300 mb-4 mt-4"></div>
+        <p class="text-gray-600 text-sm flex-grow text-center">Perguntas, troca com o time e brindes especiais ao vivo.</p>
+      </div>
+
+    </main>
+
+    <!-- Horário movido para cima do Footer -->
+    <div class="flex items-center gap-3 px-2 mb-4">
+      <!-- Ícone de Relógio -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-kenner-orange">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      <span class="text-lg md:text-xl font-bold uppercase tracking-wide text-kenner-dark">
+        09h00 e 14h00 <span class="mx-1 text-gray-400">|</span> Ao Vivo
+      </span>
+    </div>
+
+    <!-- Footer transformado em linha divisória -->
+    <footer class="flex items-center justify-center w-full max-w-lg">
+      <div class="h-px bg-kenner-orange w-full"></div>
+    </footer>
+
+  </div>
 </div>
 
-            </div>
-        </section>
-
-    </div>
-
-    
-
-    <!-- Estilos da Animação do Carrossel -->
-<style>
-  /* Define o movimento contínuo da direita para a esquerda */
-  @keyframes rolagem-infinita {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 0.75rem)); /* -50% da largura total menos metade do espaço (gap) */ }
-  }
-  
-  .animar-carrossel {
-    animation: rolagem-infinita 20s linear infinite;
-    /* Ajuste os '20s' para deixar a rolagem mais rápida ou mais lenta */
-  }
-
-  /* Opcional: Pausa a animação quando o usuário coloca o dedo/mouse por cima */
-  .animar-carrossel:hover {
-    animation-play-state: paused;
-  }
-</style>
-
-
-
-    <!-- 1. CSS EXTRA (Esconder a barra de rolagem horizontal) -->
-    <style>
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        /* Muda o cursor quando está arrastando */
-        .carousel-track.active {
-            cursor: grabbing;
-            cursor: -webkit-grabbing;
-        }
-    </style>
-
-
-
-    <!-- 3. MODAL DE IMAGEM FULLSCREEN -->
-    <div id="gallery-modal" class="fixed inset-0 z-[999] hidden flex items-center justify-center bg-black/95 backdrop-blur-md opacity-0 transition-opacity duration-300">
-        <!-- Botão Fechar -->
-        <button id="close-gallery-btn" class="absolute top-6 right-6 text-white/70 hover:text-orange-500 transition-colors z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </button>
-        
-        <!-- Imagem Expandida -->
-        <img id="gallery-modal-img" src="" alt="Imagem Expandida" class="max-w-[95vw] max-h-[90vh] object-contain scale-90 transition-transform duration-500 shadow-2xl rounded-sm">
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const track = document.getElementById('carousel-track');
-            let isDragging = false;
-            let startX, scrollLeft;
-            let animationFrameId;
-            let inactivityTimeout;
-            const scrollSpeed = 0.5; // Velocidade do auto-scroll (aumente para ir mais rápido)
-            
-            //  1. Lógica do Loop Infinito e Auto Scroll ---
-
-            // Duplica as imagens uma vez para garantir que o carrossel pareça infinito
-            const cloneItems = () => {
-                const items = Array.from(track.children);
-                items.forEach(item => {
-                    const clone = item.cloneNode(true);
-                    // Re-adiciona o evento de clique no modal para os itens clonados
-                    clone.querySelector('img').addEventListener('click', openImageModal);
-                    track.appendChild(clone);
-                });
-            };
-            cloneItems(); // Clona os itens assim que a página carrega
-
-            const autoScroll = () => {
-                track.scrollLeft += scrollSpeed;
-                
-                // Se chegou na metade (ou seja, percorreu os itens originais), reseta para o começo silenciosamente
-                if (track.scrollLeft >= track.scrollWidth / 2) {
-                    track.scrollLeft = 0;
-                }
-                animationFrameId = requestAnimationFrame(autoScroll);
-            };
-
-            const stopAutoScroll = () => {
-                cancelAnimationFrame(animationFrameId);
-            };
-
-            const resetInactivityTimer = () => {
-                stopAutoScroll();
-                clearTimeout(inactivityTimeout);
-                // Retoma o scroll sozinho após 1.5s sem mexer
-                inactivityTimeout = setTimeout(() => {
-                    animationFrameId = requestAnimationFrame(autoScroll);
-                }, 1500); 
-            };
-
-            // Inicia o carrossel rolando
-            animationFrameId = requestAnimationFrame(autoScroll);
-
-            // --- 2. Lógica de Arrastar com o Mouse (Drag) ---
-
-            track.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                track.classList.add('active');
-                startX = e.pageX - track.offsetLeft;
-                scrollLeft = track.scrollLeft;
-                stopAutoScroll();
-                clearTimeout(inactivityTimeout);
-            });
-
-            track.addEventListener('mouseleave', () => {
-                isDragging = false;
-                track.classList.remove('active');
-                resetInactivityTimer();
-            });
-
-            track.addEventListener('mouseup', () => {
-                isDragging = false;
-                track.classList.remove('active');
-                resetInactivityTimer();
-            });
-
-            track.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                e.preventDefault();
-                const x = e.pageX - track.offsetLeft;
-                const walk = (x - startX) * 2; // O multiplicador '2' faz rolar mais rápido ao arrastar
-                track.scrollLeft = scrollLeft - walk;
-            });
-
-            // Pausa se usar a rodinha do mouse ou tocar no mobile
-            track.addEventListener('wheel', resetInactivityTimer);
-            track.addEventListener('touchstart', resetInactivityTimer);
-            track.addEventListener('touchend', resetInactivityTimer);
-
-
-            // --- 3. Lógica do Modal de Imagem ---
-            
-            const modal = document.getElementById('gallery-modal');
-            const modalImg = document.getElementById('gallery-modal-img');
-            const closeBtn = document.getElementById('close-gallery-btn');
-            const images = document.querySelectorAll('.carousel-image');
-
-            function openImageModal(e) {
-                // Se estiver arrastando, não abre a imagem (evita clique acidental)
-                if (isDragging) return; 
-
-                modalImg.src = e.target.src;
-                modal.classList.remove('hidden');
-                
-                // Pequeno delay para a transição de fade/scale funcionar
-                setTimeout(() => {
-                    modal.classList.remove('opacity-0');
-                    modalImg.classList.remove('scale-90');
-                    modalImg.classList.add('scale-100');
-                }, 10);
-                
-                document.body.style.overflow = 'hidden'; // Trava o scroll da página
-                stopAutoScroll(); // Para o carrossel enquanto estiver vendo a foto
-            }
-
-            function closeImageModal() {
-                modal.classList.add('opacity-0');
-                modalImg.classList.remove('scale-100');
-                modalImg.classList.add('scale-90');
-                
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = 'auto'; // Libera o scroll da página
-                    resetInactivityTimer(); // Volta a rolar o carrossel
-                }, 300);
-            }
-
-            // Associa o clique nas imagens originais
-            images.forEach(img => {
-                img.addEventListener('click', openImageModal);
-            });
-
-            closeBtn.addEventListener('click', closeImageModal);
-            
-            // Fecha se clicar no fundo preto
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) closeImageModal();
-            });
-
-            // Fecha se apertar ESC
-            document.addEventListener('keydown', (e) => {
-                if (e.key === "Escape" && !modal.classList.contains('hidden')) {
-                    closeImageModal();
-                }
-            });
-        });
-    </script>
 
     <footer class="w-full bg-neutral-950 text-neutral-400 py-6 border-t border-neutral-900 z-50 relative">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">

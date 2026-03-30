@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação - Live de Lançamento Kenner</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat para um visual moderno e semelhante ao original -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        kenner: {
+                            orange: '#ff5a00',
+                            dark: '#1a1a1a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-kenner-dark min-h-screen flex items-center justify-center p-4 md:p-8">
+
+    <div class="max-w-7xl w-full mx-auto flex flex-col items-center">
+        
+        <!-- Header Section -->
+        <header class="text-center w-full mb-12 flex flex-col items-center">
+            <!-- Espaço para o PNG do Logo da Kenner -->
+            <img 
+                src="img/098709837410938847938.png" 
+                alt="Logo Kenner" 
+                class="h-[130px] object-contain mb-6"
+            >
+            
+            <h2 class="text-kenner-orange text-xl md:text-2xl font-bold uppercase tracking-widest mb-3">
+                Live de Lançamento Makho
+            </h2>
+            
+            <div class="flex items-center justify-center gap-4 w-full max-w-2xl">
+                <div class="h-px bg-kenner-orange flex-grow"></div>
+                <h1 class="text-2xl md:text-4xl font-extrabold uppercase tracking-widest text-kenner-dark">
+                    Programação
+                </h1>
+                <div class="h-px bg-kenner-orange flex-grow"></div>
+            </div>
+        </header>
+
+        <!-- Cards Section -->
+        <main class="flex lg:grid lg:grid-cols-5 overflow-x-auto gap-6 w-full items-stretch mb-16 p-10 snap-x snap-mandatory">
+            
+            <!-- Card 1 -->
+            <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-kenner-orange shadow-[0_0_25px_10px_rgba(255,90,0,0.3)] snap-center">
+                <h4 class="font-extrabold text-xl uppercase mb-3 leading-tight text-kenner-orange text-center mt-4">Makho:<br><span class="text-kenner-dark">A slide mais<br>confortável<br>da Kenner</span></h4>
+                <div class="w-full h-px bg-gray-300 mb-4"></div>
+                <p class="text-gray-600 text-sm flex-grow text-center">Descubra os diferenciais, tecnologia e conceito do produto.</p>
+            </div>
+
+            <!-- Card 2 (Mercado de slides) -->
+            <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-kenner-orange shadow-[0_0_25px_10px_rgba(255,90,0,0.3)] snap-center">
+                <h4 class="text-kenner-dark font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Mercado<br>de slides<br>no Brasil</h4>
+                <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+                <p class="text-gray-600 text-sm flex-grow text-center">Entenda tendências, comportamento e posicionamento da categoria.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-kenner-orange shadow-[0_0_25px_10px_rgba(255,90,0,0.3)] snap-center">
+                <h4 class="text-kenner-dark font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Orientações<br>de exposição</h4>
+                <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+                <p class="text-gray-600 text-sm flex-grow text-center">Como destacar o produto no PDV e vender mais.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="w-72 shrink-0 lg:w-auto bg-gray-50 rounded-xl p-6 flex flex-col min-h-[320px] transition-shadow border border-kenner-orange shadow-[0_0_25px_10px_rgba(255,90,0,0.3)] snap-center">
+                <h4 class="text-kenner-dark font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">O que vem<br>por aí (Digital)</h4>
+                <div class="w-full h-px bg-gray-300 mb-4 mt-8"></div>
+                <p class="text-gray-600 text-sm flex-grow text-center">Campanhas, redes sociais e como a marca vai impulsionar o produto.</p>
+            </div>
+
+            <!-- Card 5 (Destaque Laranja) -->
+            <div class="w-72 shrink-0 lg:w-auto bg-kenner-orange rounded-xl p-6 flex flex-col min-h-[320px] transform lg:-translate-y-2 transition-transform duration-300 text-white shadow-[0_0_25px_10px_rgba(255,90,0,0.4)] border border-orange-400 snap-center">
+                <h4 class="font-extrabold text-xl uppercase mb-3 leading-tight text-center mt-4">Momento<br>de Interação</h4>
+                <div class="w-full h-px bg-white/30 mb-4 mt-4"></div>
+                <p class="text-white/90 text-sm flex-grow text-center">Perguntas, troca com o time e brindes especiais ao vivo.</p>
+            </div>
+
+        </main>
+
+        <!-- Footer / Horário -->
+        <footer class="flex items-center justify-center gap-4 w-full max-w-lg">
+            <div class="h-px bg-kenner-orange flex-grow"></div>
+            <div class="flex items-center gap-3 px-2">
+                <!-- Ícone de Relógio -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-kenner-orange">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span class="text-lg md:text-xl font-bold uppercase tracking-wide text-kenner-dark">
+                    09h00 e 14h00 <span class="mx-1 text-gray-400">|</span> Ao Vivo
+                </span>
+            </div>
+            <div class="h-px bg-kenner-orange flex-grow"></div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
