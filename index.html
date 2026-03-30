@@ -1,3 +1,5 @@
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden w-full max-w-[100vw]">
+    <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +10,13 @@
 
     <style>
         /* Suas Fontes Locais */
+        @font-face {
+            font-family: 'Kenner Light';
+            src: url('fonts/Kenner-Light.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
         @font-face {
             font-family: 'Empresa Sans'; 
             src: url('fonts/EmpresaSans-Regular.otf') format('opentype');
@@ -48,7 +57,7 @@
                 extend: {
                     fontFamily: {
                         // Agora usando apenas a fonte local como primária
-                        sans: ['Empresa Sans', 'sans-serif'], 
+                        sans: ['Empresa Sans', 'sans-serif'], 'kenner-light': ['Kenner Light', 'sans-serif']
                     },
                     colors: {
                         'brand-orange': '#e85d22', 
@@ -72,7 +81,8 @@
         }
     </script>
 </head>
-<body class="text-brand-dark font-sans antialiased overflow-x-hidden">
+
+<body class="text-brand-dark font-sans antialiased overflow-x-hidden w-full max-w-[100vw]">
 
     <!-- Seção 1: Barra do Logo --> 
     <header class="w-full py-[0.1rem] bg-brand-dark flex justify-center items-center z-50 relative border-b border-gray-800">
@@ -122,12 +132,12 @@
                         <img src="img/87309487123.png" alt="Kenner Makho" class="-mt-[9rem] -mb-[5rem] max-[497px]:-mt-[7rem] max-[497px]:-mb-[4rem] max-[400px]:-mt-[6rem] max-[400px]:-mb-[3rem] max-[345px]:-mt-[5rem] max-[345px]:-mb-[2rem] max-[264px]:-mt-[4rem] max-[264px]:mb-0 w-full max-w-lg object-contain rounded-3xl drop-shadow-2xl scale-110">
                     </div>
 
-                    <div class="space-y-3 mt-4">
-                        <p class="text-[0.95rem] md:text-[1.15rem] text-gray-800 font-medium leading-relaxed">
+<div class="space-y-3 mt-4 font-kenner-light bg-white">
+                        <p class="text-[0.95rem] md:text-[1.15rem] text-gray-800 leading-relaxed font-light">
                             Conheça a primeira sandália ergonômica da Kenner: Makho.<br>
                             Conforto e robustez na medida certa!
                         </p>
-                        <p class="text-[0.95rem] md:text-[1.15rem] text-gray-700 leading-relaxed">
+                        <p class="text-[0.95rem] md:text-[1.15rem] text-gray-700 leading-relaxed font-light">
                             Aprenda os diferenciais desse novo modelo, alavanque suas vendas e concorra a
                         </p>
                     </div>
