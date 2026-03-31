@@ -85,8 +85,11 @@
     <body class="text-brand-dark font-sans antialiased overflow-x-hidden w-full max-w-[100vw]">
 
         <!-- SEC 1: Barra do Logo -->
-        <header class="w-full py-[0.1rem] bg-brand-dark flex justify-center items-center z-50 relative border-b border-gray-800">
+        <header class="w-full py-[0.1rem] bg-brand-dark flex flex-col justify-center items-center z-50 relative border-b border-gray-800">
             <img src="img/098709837410938847938.png" alt="Logo Kenner" class="h-10 md:h-12 w-auto">
+            <span class="text-xs md:text-sm text-kenner-orange font-black uppercase tracking-widest">
+                live de treinamento makho
+            </span>
         </header>
 
         <!-- SEC 2: Barra do Contador -->
@@ -122,7 +125,7 @@
         <div class="relative z-10 w-full bg-transparent">
 
             <!-- SEC HERO -->
-            <section id="hero-section" class="flex items-center relative pt-10 pb-10 min-h-[70vh] mb-[150px]">
+            <section id="hero-section" class="flex items-center relative pt-10 pb-10 min-h-[70vh] mb-[150px] lg:mb-[80px]">
                 <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 px-5 md:px-8 items-center">
 
                     <div class="space-y-4 md:space-y-4 max-w-lg z-20 text-center lg:text-left mx-auto lg:mx-0">
@@ -154,7 +157,8 @@
                             class="w-full lg:w-auto bg-black text-white px-6 py-4 md:px-10 md:py-5 font-bold uppercase tracking-wider text-sm sm:text-base md:text-lg rounded hover:bg-brand-orange transition-colors duration-300 shadow-xl pointer-events-auto">
                             Vem Assistir!
                         </button><br>
-                        <span class="text-base font-black uppercase tracking-wider text-kenner-orange">9h e 14h (horario de brasilia)</span>
+                        <span class="text-base font-black uppercase tracking-wider text-kenner-orange">DIA 29/04 - 9H ou 14H (HORÁRIO DE BRASÍLIA)
+</span>
                     </div>
 
                     <div class="relative z-10 hidden lg:flex justify-center lg:justify-end mt-4 md:mt-0">
@@ -169,9 +173,6 @@
 
                     <header class="text-center w-full mb-12 flex flex-col items-center">
                         <img src="img/098709837410938847938.png" alt="Logo Kenner" class="h-[130px] object-contain">
-                        <h2 class="text-kenner-orange text-xl md:text-2xl font-bold uppercase tracking-widest">
-                            Live de treinamento Makho
-                        </h2>
                         <div class="flex items-center justify-center gap-4 w-full max-w-2xl">
                             <div class="h-px bg-kenner-orange flex-grow"></div>
                             <h1 class="text-2xl md:text-4xl font-extrabold uppercase tracking-widest text-kenner-dark">
@@ -225,13 +226,18 @@
                         <div class="h-px bg-kenner-orange flex-grow"></div>
 
                         <!-- Centro: Ícone e Texto -->
-                        <div class="flex items-center gap-3 px-2 shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-kenner-orange">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
+                        <div class="flex flex-col items-center gap-1 px-2 shrink-0 text-center">
+                            <div class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-kenner-orange">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span class="text-lg md:text-xl font-bold uppercase tracking-wide text-kenner-dark">
+                                    09h e 14h (Horário de Brasília)
+                                </span>
+                            </div>
                             <span class="text-lg md:text-xl font-bold uppercase tracking-wide text-kenner-dark">
-                                09h e 14h (horario de brasilia) <span class="mx-1 text-gray-400">|</span> Ao Vivo
+                                ao vivo
                             </span>
                         </div>
 
