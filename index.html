@@ -49,6 +49,21 @@
             .info-dot {
                 box-shadow: 0 0 10px rgba(255,255,255,0.8);
             }
+
+            /* Override countdown row breakpoint para 840px */
+            .countdown-bar {
+                flex-direction: column;
+            }
+            @media (min-width: 768px) and (max-width: 839px) {
+                .countdown-bar {
+                    flex-direction: column !important;
+                }
+            }
+            @media (min-width: 840px) {
+                .countdown-bar {
+                    flex-direction: row !important;
+                }
+            }
         </style>
 
         <script>
@@ -85,11 +100,13 @@
     <body class="text-brand-dark font-sans antialiased overflow-x-hidden w-full max-w-[100vw]">
 
         <!-- SEC 1: Barra do Logo -->
-        <header class="w-full py-[0.1rem] bg-brand-dark flex flex-col lg:flex-row justify-center lg:justify-between items-center z-50 relative border-b border-gray-800 px-4 lg:px-8">
-            <img src="img/098709837410938847938.png" alt="Logo Kenner" class="h-10 md:h-12 w-auto">
-            <span class="text-xs md:text-sm text-kenner-orange font-black uppercase tracking-widest mt-1 lg:mt-0">
-                live de treinamento makho
-            </span>
+        <header class="w-full py-[0.1rem] bg-brand-dark z-50 relative border-b border-gray-800">
+            <div class="max-w-[1024px] mx-auto flex flex-col lg:flex-row justify-center lg:justify-between items-center px-4 lg:px-8">
+                <img src="img/098709837410938847938.png" alt="Logo Kenner" class="h-10 md:h-12 w-auto">
+                <span class="text-xs md:text-sm text-kenner-orange font-black uppercase tracking-widest mt-1 lg:mt-0">
+                    live de treinamento makho
+                </span>
+            </div>
         </header>
 
         <!-- SEC 2: Barra do Contador -->
@@ -126,7 +143,7 @@
             <div class="hidden md:block w-px h-6 bg-white/30"></div>
             
             <!-- Event Date -->
-            <span class="text-xs md:text-sm font-black uppercase tracking-wider text-center">DIA 29/04 - 9H OU 14H</span>
+            <span class="text-xs md:text-sm font-black uppercase tracking-wider text-center">DIA 29/04 - 9H OU 14H <span class="text-[0.55rem] md:text-[0.65rem] font-bold">(HORÁRIO DE BRASÍLIA)</span></span>
         </div>
 
         <!-- Fundo base -->
