@@ -180,8 +180,16 @@
                                 
                             </div> -->
 
-                        <button
+                        <!-- MODAL BUTTON (descomente para usar modal) -->
+                        <!-- <button
                             onclick="openModal()"
+                            class="w-full lg:w-auto bg-black text-white px-6 py-4 md:px-10 md:py-5 font-bold uppercase tracking-wider text-sm sm:text-base md:text-lg rounded hover:bg-brand-orange transition-colors duration-300 shadow-xl pointer-events-auto">
+                            Vem Assistir!
+                        </button><br> -->
+
+                        <!-- LINK BUTTON (clique para redirecionar ao YouTube) -->
+                        <button
+                            onclick="window.location.href='https://youtube.com/live/BiORBIePRjc?feature=share'"
                             class="w-full lg:w-auto bg-black text-white px-6 py-4 md:px-10 md:py-5 font-bold uppercase tracking-wider text-sm sm:text-base md:text-lg rounded hover:bg-brand-orange transition-colors duration-300 shadow-xl pointer-events-auto">
                             Vem Assistir!
                         </button><br>
@@ -314,67 +322,7 @@
         </div>
 
         <!-- SCRIPTS -->
-        <script>
-            const modal = document.getElementById('mediaModal');
-
-            function openModal() {
-                modal.classList.remove('hidden');
-                setTimeout(() => {
-                    modal.classList.remove('opacity-0');
-                    modal.classList.add('opacity-100');
-                }, 10);
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeModal() {
-                modal.classList.remove('opacity-100');
-                modal.classList.add('opacity-0');
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = 'auto';
-                }, 300);
-            }
-
-            document.addEventListener('keydown', function(event) {
-                if (event.key === "Escape" && !modal.classList.contains('hidden')) {
-                    closeModal();
-                }
-            });
-
-            const targetDate = new Date('2026-04-29T09:00:00');
-            let countdownInterval;
-
-            function updateCountdown() {
-                const now = new Date();
-                const diff = targetDate - now;
-
-                if (diff <= 0) {
-                    clearInterval(countdownInterval);
-                    const label = document.getElementById('countdown-label');
-                    if (label) {
-                        label.innerText = 'AO VIVO';
-                        label.classList.add('animate-pulse', 'text-lg', 'font-bold');
-                        label.classList.remove('font-medium');
-                    }
-                    document.getElementById('days').innerText = '00';
-                    document.getElementById('hours').innerText = '00';
-                    document.getElementById('minutes').innerText = '00';
-                    document.getElementById('seconds').innerText = '00';
-                    return;
-                }
-
-                const daysEl = document.getElementById('days');
-                const hoursEl = document.getElementById('hours');
-                const minutesEl = document.getElementById('minutes');
-                const secondsEl = document.getElementById('seconds');
-
-                if(daysEl) daysEl.innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-                if(hoursEl) hoursEl.innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-                if(minutesEl) minutesEl.innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-                if(secondsEl) secondsEl.innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
-            }
-            countdownInterval = setInterval(updateCountdown, 1000);
-            updateCountdown();
-        </script>
+        <script src="js/modal.js"></script>
+        <script src="js/countdown.js"></script>
     </body>
 </html>
